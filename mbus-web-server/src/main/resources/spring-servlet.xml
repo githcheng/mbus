@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	  http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd
+             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd  
+             http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd              
+             http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+    <task:annotation-driven/>
+    <context:annotation-config />
+	<context:spring-configured />
+    <mvc:default-servlet-handler/>
+
+    <!--<mvc:resources location="/img" mapping="/img/**" cache-period="31556926"/>-->
+    <!--<mvc:resources location="/css" mapping="/css/**" cache-period="31556926"/>-->
+    <!--<mvc:resources location="/js" mapping="/js/**" cache-period="31556926"/>-->
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <!-- 如果不配置或/*,将拦截所有的Controller -->
+            <bean class="cn.cjam.web.interceptors.LoginControlInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+	<!-- 激活@Controller模式 -->
+	<mvc:annotation-driven >
+        <mvc:message-converters register-defaults="false">
+            <bean
+                class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes" value="text/plain;charset=UTF-8" />
+            </bean>
+            <bean
+                class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="supportedMediaTypes" value="text/plain;charset=UTF-8" />
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+	<!-- 对包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能 -->
+	<context:component-scan base-package="cn.cjam.web" />
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter" />
+
+</beans>  
