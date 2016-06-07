@@ -24,7 +24,7 @@ public class TestService {
 
 
     public List<TestUser> getList(int id){
-        ArrayList<TestUser> testUsers = new ArrayList<>();
+        ArrayList<TestUser> testUsers = new ArrayList<TestUser>();
         for(int i=1;i<10;i++){
             TestUser testUser = new TestUser();
             testUser.setName("name_"+i);
