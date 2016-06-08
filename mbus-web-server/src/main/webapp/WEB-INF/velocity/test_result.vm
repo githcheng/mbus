@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="../css/com.css"/>
 </head>
 <body>
-<h1>结果：</h1>
+<h1>结果：共条数 $data.size()</h1>
 <div class="table-container">
     <table>
         #foreach ($element in $!data)

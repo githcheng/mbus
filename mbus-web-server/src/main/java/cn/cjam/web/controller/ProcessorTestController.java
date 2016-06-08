@@ -48,7 +48,9 @@ public class ProcessorTestController {
         SeedTemplate seedTemplate = new SeedTemplate(startUrl, content, isBrowse);
         JSONArray result = processor.test(seedTemplate);
         model.put("id",id);
-        model.put("data",parse(result));
+        List<ShowResultTemplate> resultTemplates = parse(result);
+        model.put("data",resultTemplates);
+        model.put("total",resultTemplates.size());
 
         return new ModelAndView("test_result",model);
     }

@@ -8,6 +8,20 @@
 <h1>标题：</h1>
 <div class="table-container">
     <table>
+        <form action="/web/processor" method="get">
+            <tr>
+                <td><input  name="startUrl" /></td>
+                <td>
+                    <textarea   name="content">  </textarea>
+                </td>
+                <td><input  name="state"  /></td>
+                <td><input  name="isBrowse"   /></td>
+                <td><input  name="operator"  /></td>
+                <td>
+                    <input type="submit" value="新增" />
+                </td>
+            </tr>
+        </form>
         #foreach ($element in $!seedList)
             <form action="/web/processor" method="get">
             <tr>
@@ -20,10 +34,16 @@
                 <td><input  name="isBrowse" value=${element.isBrowse} /></td>
                 <td><input  name="operator" value=${element.operator} /></td>
                 <td>
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="测试" />
                 </td>
             </tr>
             </form>
+            <td>
+                <button type="button">通过</button>
+            </td>
+            <td>
+                <button type="button">修改</button>
+            </td>
         #end
     </table>
 </div>
