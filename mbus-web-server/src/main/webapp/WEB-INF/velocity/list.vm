@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>list</title>
+    <link rel="stylesheet" type="text/css" href="../css/com.css"/>
+</head>
+<body>
+<h1>标题：</h1>
+<div class="table-container">
+    <table>
+        #foreach ($element in $!seedList)
+            <form action="/web/processor" method="get">
+            <tr>
+                <td><input  name="id" value=${element.id} /></td>
+                <td><input  name="startUrl" value=${element.startUrl} /></td>
+                <td>
+                    <textarea   name="content"> ${element.content} </textarea>
+                </td>
+                <td><input  name="state" value=${element.state} /></td>
+                <td><input  name="isBrowse" value=${element.isBrowse} /></td>
+                <td><input  name="operator" value=${element.operator} /></td>
+                <td>
+                        <input type="submit" value="Submit" />
+                </td>
+            </tr>
+            </form>
+        #end
+    </table>
+</div>
+</body>
+</html>

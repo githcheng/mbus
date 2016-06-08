@@ -9,29 +9,29 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
 
-    <import resource="classpath:spring-servlet.xml" />
+    <import resource="classpath:spring-servlet.xml"/>
 
     <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
-        <!--<property name="prefix" value="/" />-->
-        <!--<property name="suffix" value=".html" />-->
+    <!--<property name="prefix" value="/" />-->
+    <!--<property name="suffix" value=".html" />-->
     <!--</bean>-->
 
-    <!--规定模板文件的类型和位置-->
-    <bean id="velocityConfigurer"
-          class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
-        <property name="resourceLoaderPath" value="velocity/" />
-        <property name="velocityProperties">
-            <props>
-                <prop key="input.encoding">utf-8</prop>
-                <prop key="output.encoding">utf-8</prop>
-            </props>
-        </property>
+    <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+        <property name="resourceLoaderPath" value="/WEB-INF/velocity/"/>
+        <property name="configLocation" value="classpath:velocity.properties"/>
     </bean>
-    <!--配置附加工具，以及将后缀为vm的文件交给下面的Resolver处理-->
-    <bean id="velocityViewResolver"
-          class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
-        <property name="suffix" value=".vm" />
-        <property name="contentType" value="text/html;charset=utf-8" />
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+        <property name="suffix" value=".vm"/>
+        <property name="prefix" value=""/>
+        <!-- 使用springMacro的对象 -->
+        <property name="exposeSpringMacroHelpers" value="true"/>
+        <property name="requestContextAttribute" value="content"/>
+        <property name="exposeRequestAttributes" value="true"/>
+        <property name="exposeSessionAttributes" value="true"/>
+        <property name="contentType" value="text/html;charset=UTF-8"/>
+        <!-- spring的日期格式化 -->
+        <property name="dateToolAttribute" value="dateTool"/>
+        <!-- velocity toolbox -->
         <property name="toolboxConfigLocation" value="/WEB-INF/toolbox.xml"/>
     </bean>
 

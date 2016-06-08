@@ -6,7 +6,7 @@
 <body>
 <h1>标题：$!title</h1>
 <div>
-    <p>内容：$!content</p>
+    <p>内容www：$!time, $!title, $!content1 </p>
     <p>macro函数测试：#test()</p>
 </div>
 </body>
