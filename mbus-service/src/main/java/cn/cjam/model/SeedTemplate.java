@@ -11,6 +11,7 @@ public class SeedTemplate {
     private Integer state;
     private Integer isBrowse;
     private String operator;
+    private Integer type;
 
     public SeedTemplate(){
 
@@ -22,6 +23,20 @@ public class SeedTemplate {
         this.isBrowse = isBrowse;
     }
 
+    public SeedTemplate(Integer type, String startUrl,String content,Integer isBrowse){
+        this.type = type;
+        this.startUrl = startUrl;
+        this.content = content;
+        this.isBrowse = isBrowse;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
 
     public Long getId() {
         return id;

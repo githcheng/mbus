@@ -3,6 +3,7 @@ package cn.cjam.service;
 import cn.cjam.model.SeedTemplate;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -47,12 +48,10 @@ public class TestProcessor implements PageProcessor {
         //
         if (page.getResultItems().get("title")==null){
             //skip this page
-            System.out.println("+++++++++++");
             page.setSkip(true);
         } else {
             resultArr.add(JSON.toJSON(page.getResultItems()));
         }
-        System.out.println("==============");
     }
 
     @Override
@@ -68,10 +67,8 @@ public class TestProcessor implements PageProcessor {
     public JSONArray test(SeedTemplate seed){
 
         resultArr  = new JSONArray();
-        startUrl = seed.getStartUrl();
-        String content = seed.getContent();
         Integer isBrowse = seed.getIsBrowse();
-        parseContent(content);
+        fillParameter(seed);
         logger.info("{},{},{},{}",startUrl,targetUrlRegex,titleRegex,contentRegex);
 
         Spider spider = Spider.create(this);
@@ -84,12 +81,17 @@ public class TestProcessor implements PageProcessor {
 
     /**
      * 解析内容字段
-     * @param content
+     * @param seed
      */
-    private void parseContent(String content) {
-        this.startUrl = "http://www.tjztb.gov.cn/zbgg/gczb/";
-        this.targetUrlRegex = "(http://www\\.tjztb\\.gov\\.cn/zbgg/gczb/\\d+/t\\d+_\\d+\\.shtml)";
-        this.titleRegex = "/html/body/div/div[5]/div[3]/text()"; ///html/body/div/div[5]/div[3]
-        this.contentRegex = "/html/body/div/div[5]";
+    private void fillParameter(SeedTemplate seed) {
+        this.startUrl = seed.getStartUrl();
+        JSONObject conObj = JSONObject.parseObject(seed.getContent());
+        this.targetUrlRegex = conObj.getString("targetUrlRegex");
+        this.titleRegex = conObj.getString("titleRegex");
+        this.contentRegex = conObj.getString("contentRegex");
+
+//        this.targetUrlRegex = "(http://www\\.tjztb\\.gov\\.cn/zbgg/gczb/\\d+/t\\d+_\\d+\\.shtml)";
+//        this.titleRegex = "/html/body/div/div[5]/div[3]/text()"; ///html/body/div/div[5]/div[3]
+//        this.contentRegex = "/html/body/div/div[5]";
     }
 }

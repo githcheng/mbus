@@ -1,6 +1,7 @@
 package cn.cjam.web.controller;
 
 import cn.cjam.model.SeedTemplate;
+import cn.cjam.service.TestMapProcessor;
 import cn.cjam.service.TestProcessor;
 import cn.cjam.web.model.ShowResultTemplate;
 import com.alibaba.fastjson.JSONArray;
@@ -30,7 +31,7 @@ import java.util.Map;
 public class ProcessorTestController {
 
     @Autowired
-    private TestProcessor processor;
+    private TestMapProcessor processor;
 
     private final Logger logger = LoggerFactory.getLogger(ProcessorTestController.class);
 
@@ -64,12 +65,16 @@ public class ProcessorTestController {
         }
         for (int i=0;i<result.size();i++){
             JSONObject obj = result.getJSONObject(i);
-            ShowResultTemplate element = new ShowResultTemplate();
-            element.title = obj.getJSONObject("all").getString("title");
-            element.contentSize = StringUtils.length(obj.getJSONObject("all").getString("content"));
-            element.url = obj.getJSONObject("request").getString("url");
-            element.statusCode = obj.getJSONObject("request").getJSONObject("extras").getInteger("statusCode");
-            templates.add(element);
+            try {
+                ShowResultTemplate element = new ShowResultTemplate();
+                element.title = obj.getJSONObject("all").getString("title");
+                element.contentSize = StringUtils.length(obj.getJSONObject("all").getString("content"));
+                element.url = obj.getJSONObject("request").getString("url");
+                element.statusCode = obj.getJSONObject("request").getJSONObject("extras").getInteger("statusCode");
+                templates.add(element);
+            } catch (Exception e){
+                System.out.println(e);
+            }
         }
         return templates;
     }

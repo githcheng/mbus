@@ -3,49 +3,139 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>list</title>
     <link rel="stylesheet" type="text/css" href="../css/com.css"/>
+    <script src="../../js/jquery-1.7.2.min.js"></script>
+    <script src="../../script/api.js" ></script>
+    <script language=JavaScript>
+        self.opener.location.reload();
+    </script>
 </head>
 <body>
-<h1>标题：</h1>
-<div class="table-container">
-    <table>
-        <form action="/web/processor" method="get">
-            <tr>
-                <td><input  name="startUrl" /></td>
-                <td>
-                    <textarea   name="content">  </textarea>
-                </td>
-                <td><input  name="state"  /></td>
-                <td><input  name="isBrowse"   /></td>
-                <td><input  name="operator"  /></td>
-                <td>
-                    <input type="submit" value="新增" />
-                </td>
-            </tr>
+##<h1>种子库编辑</h1>
+
+<div class="am-g">
+    <div class="am-u-md-8 am-u-sm-centered">
+        <form class="am-form">
+            <fieldset class="am-form-set">
+                <input type="text"  placeholder="入口地址" id="startUrl" name="startUrl">
+                <input type="text" placeholder="您要抓取的内容" id="content" name="content">
+                <input type="text" placeholder="填下您的名字" id="operator" name="operator" >
+                <select id="type"  name="type">
+                    <option value=1 selected="selected" >招标公告</option>
+                    <option value=2>中标公告</option>
+                    <option value=3>招标变更</option>
+                    <option value=4>政策法规</option>
+                    <option value=5>新闻资讯</option>
+                </select>
+                <select id="isBrowse" name="isBrowse">
+                    <option value=0 selected="selected" >不模拟</option>
+                    <option value=1>模拟浏览器</option>
+                </select>
+            </fieldset>
+            <button type="submit" class="am-btn am-btn-primary am-btn-block" onclick="add()" >添加</button>
         </form>
-        #foreach ($element in $!seedList)
-            <form action="/web/processor" method="get">
-            <tr>
-                <td><input  name="id" value=${element.id} /></td>
-                <td><input  name="startUrl" value=${element.startUrl} /></td>
-                <td>
-                    <textarea   name="content"> ${element.content} </textarea>
-                </td>
-                <td><input  name="state" value=${element.state} /></td>
-                <td><input  name="isBrowse" value=${element.isBrowse} /></td>
-                <td><input  name="operator" value=${element.operator} /></td>
-                <td>
-                        <input type="submit" value="测试" />
-                </td>
-            </tr>
-            </form>
-            <td>
-                <button type="button">通过</button>
-            </td>
-            <td>
-                <button type="button">修改</button>
-            </td>
-        #end
-    </table>
+    </div>
+</div>
+
+<div class="am-g">
+    <div class="am-u-md-8 am-u-sm-centered">
+
+        <table>
+            #foreach ($element in $!seedList)
+                <span class="doc-act-clip am-icon-copy"></span>
+                <form action="/web/processor" method="get" class="am-form" role="form" >
+                    <fieldset class="am-form-set">
+                        <tr>
+                            <div class="am-form-group">
+                                <input class="file" name="id" value=${element.id} />
+                                <select id="state_${element.id}" name="state">
+                                    #if (${element.state} == 0)
+                                        <option value=0 selected="selected" >待定</option>
+                                    #else
+                                        <option value=0  >待定</option>
+                                    #end
+
+                                    #if (${element.state} == 1)
+                                        <option value=1 selected="selected"  >通过</option>
+                                    #else
+                                        <option value=1>通过</option>
+                                    #end
+
+                                    #if (${element.state} == 2)
+                                        <option value=1 selected="selected"  >失效</option>
+                                    #else
+                                        <option value=1>失效</option>
+                                    #end
+                                </select>
+
+                                <select id="type_${element.id}" name="type">
+                                    #if (${element.type} == 1)
+                                        <option value=1 selected="selected" >招标公告</option>
+                                    #else
+                                        <option value=1>招标公告</option>
+                                    #end
+
+                                    #if (${element.type} == 2)
+                                        <option value=2 selected="selected" >中标公告</option>
+                                    #else
+                                        <option value=2>中标公告</option>
+                                    #end
+
+                                    #if (${element.type} == 3)
+                                        <option value=3 selected="selected" >招标变更</option>
+                                    #else
+                                        <option value=3>招标变更</option>
+                                    #end
+
+                                    #if (${element.type} == 4)
+                                        <option value=4 selected="selected" >政策法规</option>
+                                    #else
+                                        <option value=4>政策法规</option>
+                                    #end
+
+                                    #if (${element.type} == 5)
+                                        <option value=5 selected="selected" >新闻资讯</option>
+                                    #else
+                                        <option value=5>新闻资讯</option>
+                                    #end
+                                </select>
+
+                                <select id="isBrowse_${element.id}" name="isBrowse">
+                                    #if (${element.isBrowse} == 0)
+                                        <option value=0 selected="selected" >否</option>
+                                    #else
+                                        <option value=0  >否</option>
+                                    #end
+
+                                    #if (${element.isBrowse} == 1)
+                                        <option value=1 selected="selected"  >是</option>
+                                    #else
+                                        <option value=1>是</option>
+                                    #end
+                                </select>
+
+                                <input  id="operator_${element.id}" value=${element.operator} />
+                            </div>
+
+                            <div class="am-form-group">
+                                <input  class="am-form-field" id="startUrl_${element.id}" name="startUrl" value=${element.startUrl} />
+                            </div>
+                            <div class="am-form-group">
+                                <input class="am-form-field" id="content_${element.id}" name="content" value= ${element.content} />
+                            </div>
+
+                            <div class="am-form-group">
+                                <button   type="button" onclick="fConfirm(${element.id})" value="通过" class="am-btn am-btn-primary ">通过</button>
+                                <button   type="button" onclick="modify(${element.id})" value="修改" class="am-btn am-btn-primary ">修改</button>
+                                <button   type="button" onclick="del(${element.id})" value="删除" class="am-btn am-btn-primary " data-id="99"  data-type=1>删除</button>
+                                <button   type="submit" value="测试" class="am-btn am-btn-primary">测试</button>
+                            </div>
+
+                        </tr>
+                    </fieldset>
+                </form>
+            #end
+        </table>
+    </div>
 </div>
 </body>
 </html>
