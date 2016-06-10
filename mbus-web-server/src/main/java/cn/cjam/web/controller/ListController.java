@@ -37,7 +37,7 @@ public class ListController {
             HttpServletResponse response){
 
         Map<String, Object> model = Maps.newHashMap();
-        List<SeedTemplate> seedTemplates = service.getSeedTemplateListByState(0,1);
+        List<SeedTemplate> seedTemplates = service.getSeedTemplateListByState(0,1,2);
         logger.info("size:{}",seedTemplates.size());
         model.put("seedList",seedTemplates);
         return new ModelAndView("list",model);
