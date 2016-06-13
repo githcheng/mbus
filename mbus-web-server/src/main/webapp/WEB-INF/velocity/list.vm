@@ -30,8 +30,19 @@
             </fieldset>
             <button type="submit" class="am-btn am-btn-primary am-btn-block" onclick="add()" >添加</button>
         </form>
+
+    </div>
+    <div style="right: 10px; display: block;">
+        <div >
+            <ul>
+                <li><a href="/web/content" target="_blank">编辑详情</a>
+            </ul>
+            <iframe id="tmp_downloadhelper_iframe" style="display: none;"></iframe></div>
+        <div class="xm_top"></div>
     </div>
 </div>
+
+
 
 <div class="am-g">
     <div class="am-u-md-8 am-u-sm-centered">
