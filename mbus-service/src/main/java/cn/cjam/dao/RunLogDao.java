@@ -10,7 +10,6 @@ public interface RunLogDao {
 
 
     /*
-
               `seed_id` VARCHAR(255) NOT NULL DEFAULT '',
               `run_info` LONGTEXT NOT NULL,
               `state` TINYINT(4) NOT NULL DEFAULT '0',

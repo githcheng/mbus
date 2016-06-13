@@ -19,6 +19,9 @@ import us.codecraft.webmagic.processor.PageProcessor;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -27,7 +30,10 @@ public class TestMapProcessor implements PageProcessor {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private Site site = Site.me().setRetryTimes(3).setSleepTime(100);
+    private Site site = Site.me().setRetryTimes(3).setSleepTime(10);
+
+
+    private ExecutorService executorService = Executors.newCachedThreadPool();
 
     private String startUrl = null;
     private Map<String,String> paramDict = null;
@@ -99,8 +105,7 @@ public class TestMapProcessor implements PageProcessor {
             spider.setDownloader(seleniumDownloader);
             System.out.println("====set==seleniumDownloader");
         }
-        spider.addUrl(startUrl)
-                .addPipeline(new ConsolePipeline())
+        spider.addUrl(startUrl).setExecutorService(executorService)
                 .run();
         return resultArr;
 
