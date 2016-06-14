@@ -43,8 +43,9 @@ public class TaskProcessor implements Callable,PageProcessor {
 
     }
 
-    public TaskProcessor(SeedTemplate seed){
+    public TaskProcessor(SeedTemplate seed, BidDao bidDao){
         this.seed = seed;
+        this.bidDao = bidDao;
     }
 
     @Autowired

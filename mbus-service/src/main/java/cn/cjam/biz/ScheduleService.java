@@ -1,5 +1,6 @@
 package cn.cjam.biz;
 
+import cn.cjam.dao.BidDao;
 import cn.cjam.model.RunLog;
 import cn.cjam.model.SeedTemplate;
 import cn.cjam.service.TaskProcessor;
@@ -24,6 +25,12 @@ public class ScheduleService {
 
     @Autowired
     private SeedTemplateService seedTemplateService;
+
+    @Autowired
+    private TaskProcessor taskProcessor;
+
+    @Autowired
+    private BidDao bidDao;
     /**
      * 入口
      */
@@ -35,7 +42,7 @@ public class ScheduleService {
         while (iterator.hasNext()){
 
             SeedTemplate next = iterator.next();
-            TaskProcessor taskProcessor = new TaskProcessor(next);
+            TaskProcessor taskProcessor = new TaskProcessor(next,bidDao);
             Future<TaskProcessor> future = executorService.submit(taskProcessor);
             futures.add(future);
         }
