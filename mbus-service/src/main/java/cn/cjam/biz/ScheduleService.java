@@ -64,7 +64,12 @@ public class ScheduleService {
         }
 
         try {
-            runLogService.insertList(runLogArrayList);
+            for (RunLog runLog : runLogArrayList){
+                ArrayList<RunLog> runLogs = new ArrayList<RunLog>(1);
+                runLogs.add(runLog);
+                runLogService.insertList(runLogs);
+            }
+            // runLogService.insertList(runLogArrayList);
         } catch (Exception e){
             logger.info("insertList exception",e);
         }
@@ -117,20 +122,20 @@ public class ScheduleService {
                 bidDao.insert(next);
             } catch (Exception e) {
                 logger.info("bidDao insert fail:{}", e);
-                failCount++;
             }
         }
         JSONObject runInfo = new JSONObject();
         runInfo.put("total", resultList.size());
         runInfo.put("fail", failCount);
-        if (failCount == resultList.size() || resultList.size() == 0){
+        if (resultList.size() == 0){
             // 以失败结束
             runLog.setState(RunLog.state_fail);
-        } else if ( failCount == 0 ){
-            runLog.setState(RunLog.state_ok);
-        } else if (failCount > 0 && failCount < resultList.size()){
+        } else if ( resultList.size() < 10){
             runLog.setState(RunLog.state_partfail);
+        }  else {
+            runLog.setState(RunLog.state_ok);
         }
+
         runLog.setRunInfo(runInfo.toJSONString());
         runLogService.update(runLog);
         return;
