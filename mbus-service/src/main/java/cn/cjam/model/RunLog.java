@@ -1,5 +1,7 @@
 package cn.cjam.model;
 
+import com.alibaba.fastjson.JSONArray;
+
 import java.util.Date;
 
 /**
@@ -7,13 +9,36 @@ import java.util.Date;
  */
 public class RunLog {
 
+    public final static int state_default = 0;
+    public final static int state_ok = 1;
+    public final static int state_fail = 2;
+    public final static int state_partfail = 3;
     Long id;
     Long seedId;
-    Integer dateOnly;
-    String runInfo;
-    Integer state;
+    String dateOnly;
+    String runInfo = "";
+    // 0:未完成， 1：正常完成， 2:失败完成
+    Integer state = 0;
     Date ctime;
     Date utime;
+    SeedTemplate seed;
+    JSONArray result;
+
+    public JSONArray getResult() {
+        return result;
+    }
+
+    public void setResult(JSONArray result) {
+        this.result = result;
+    }
+
+    public SeedTemplate getSeed() {
+        return seed;
+    }
+
+    public void setSeed(SeedTemplate seed) {
+        this.seed = seed;
+    }
 
     @Override
     public String toString() {
@@ -28,11 +53,11 @@ public class RunLog {
                 '}';
     }
 
-    public Integer getDateOnly() {
+    public String getDateOnly() {
         return dateOnly;
     }
 
-    public void setDateOnly(Integer dateOnly) {
+    public void setDateOnly(String dateOnly) {
         this.dateOnly = dateOnly;
     }
 

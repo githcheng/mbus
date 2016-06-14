@@ -19,28 +19,34 @@ public interface RunLogDao {
      */
     final static String tableName = "t_run_log";
 
-    @Select("<script> select id, url as start_url, content, state, type,is_browse,operator from "+tableName+
+    @Select("<script> select id, seed_id from "+tableName+
             " where state in ( " +
             "<foreach item='item' index='index' collection='states' separator=','>"+
             "#{item}"
             + "</foreach>"+" ) order by utime desc </script>")
-    public List<SeedTemplate> getSeedTemplateListByState(@Param("states") List<Integer> states);
+    public List<RunLog> getSeedIdListByState(@Param("states") List<Integer> states);
 
 
-    @Insert("insert into "+tableName+"(seed_id,date_only run_info, state,ctime,utime)" +
+
+
+    @Insert("<script>  insert into "+tableName+"(seed_id,date_only, run_info, state,ctime,utime)" +
+            " values <foreach item='item' index='index' collection='items' separator=','> " +
+            "(#{item.seedId},#{item.dateOnly},#{item.runInfo},#{item.state},now(),now()) " +
+            "</foreach> </script>")
+    public Integer insertList(@Param("items") List<RunLog> runLogList);
+
+    @Insert("insert into "+tableName+"(seed_id,date_only, run_info, state,ctime,utime)" +
             " values(#{item.seedId},#{item.dateOnly},#{item.runInfo},#{item.state},now(),now())")
     public Integer insert(@Param("item") RunLog obj);
 
 
-    @Update("update "+tableName+" set url=#{item.startUrl}, content=#{item.content}, " +
-            " type=#{item.type},is_browse=#{item.isBrowse},operator=#{item.operator},utime=now() where id=#{item.id}")
-    public Integer update(@Param("item") SeedTemplate obj);
+    @Update("update "+tableName+" set run_info=#{item.runInfo}, state=#{item.state}, " +
+            " utime=now() where id=#{item.id}")
+    public Integer update(@Param("item")RunLog obj);
 
 
-    @Update("update "+tableName+" set state=#{item.state},utime=now() where id=#{item.id}")
-    public Integer confirm(@Param("item") SeedTemplate obj);
-
-    @Delete("delete from "+tableName+" where id=#{id}")
-    public Integer delete(@Param("id") Long id);
-
+    @Select("<script>   select * from "+tableName
+            +" where state in ( <foreach item='item' index='index' collection='states' separator=','> #{item}</foreach> ) " +
+            "and ctime between #{beginDate} and #{endDate}  </script>")
+    List<RunLog> getRunLogListByTime(@Param("states") List<Integer>  states, @Param("beginDate") String beginDate, @Param("endDate") String endDate);
 }

@@ -33,4 +33,9 @@ public interface SeedTemplateDao {
     @Delete("delete from "+tableName+" where id=#{id}")
     public Integer delete(@Param("id") Long id);
 
+
+
+
+
+
 }
