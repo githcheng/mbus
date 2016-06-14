@@ -59,7 +59,7 @@ public class ContentConvertController {
         JSONObject result = new JSONObject();
         result.put("URL_LIST","======");
         result.put("content", content);
-        result.put("title",title);
+        result.put("title",title+"/text()");
         result.put("URL_POST",URL_POST);
 
         JsonResult jsonResult = new JsonResult().success().withData(result);
