@@ -9,6 +9,7 @@ import cn.cjam.util.ParseUtil;
 import cn.cjam.util.TimeUtil;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,6 +73,10 @@ public class ScheduleService {
 
 
         List<RunLog> runLogs = runLogService.getRunLogListByTime(states, beginDate, endDate);
+
+        if (CollectionUtils.isEmpty(runLogs)){
+            return;
+        }
 
         CompletionService<RunLog> execcomp = new ExecutorCompletionService<RunLog>(executorService);
         BlockingQueue<Future<RunLog>> futures = new LinkedBlockingQueue<Future<RunLog>>();
