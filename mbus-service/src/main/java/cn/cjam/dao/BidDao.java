@@ -12,6 +12,6 @@ public interface BidDao {
     final static String tableName = "t_bid";
 
     @Insert("insert into "+tableName+"(url, title, content,type,create_time)" +
-            " values(#{url},#{title},#{content},#{type},now());")
+            " values(#{item.url},#{item.title},#{item.content},#{item.type},now());")
     public int insert(@Param("item") ShowResultTemplate result);
 }
