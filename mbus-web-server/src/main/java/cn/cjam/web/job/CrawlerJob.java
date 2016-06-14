@@ -59,12 +59,7 @@ public class CrawlerJob extends AbstractJob{
     public @ResponseBody
     JSONObject now(HttpServletRequest request,
                     HttpServletResponse response){
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                start();
-            }
-        });
+        start();
         return new JsonResult().success();
     }
 }
