@@ -34,9 +34,6 @@ public class ScheduleService {
     private SeedTemplateService seedTemplateService;
 
     @Autowired
-    private TaskProcessor taskProcessor;
-
-    @Autowired
     private BidDao bidDao;
 
     @Autowired
