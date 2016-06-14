@@ -48,10 +48,23 @@ public class CrawlerJob extends AbstractJob{
 
     @RequestMapping(value="/set", method={RequestMethod.GET, RequestMethod.POST})
     public @ResponseBody
-    JSONObject copy(HttpServletRequest request,
+    JSONObject set(HttpServletRequest request,
                     HttpServletResponse response,
         Integer off){
         jobOff = off;
+        return new JsonResult().success();
+    }
+
+    @RequestMapping(value="/now", method={RequestMethod.GET, RequestMethod.POST})
+    public @ResponseBody
+    JSONObject now(HttpServletRequest request,
+                    HttpServletResponse response){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                start();
+            }
+        });
         return new JsonResult().success();
     }
 }

@@ -8,7 +8,7 @@
     <bean id="crawlerJob" class="cn.cjam.web.job.CrawlerJob"></bean>
 
     <task:scheduled-tasks scheduler="tasks">
-        <task:scheduled ref="crawlerJob" method="start" cron="0 0/1 * * * ?" />
+        <task:scheduled ref="crawlerJob" method="start" cron="0 12 0/4 * * ?" />
     </task:scheduled-tasks>
 
     <task:scheduler id="tasks" pool-size="3" />
