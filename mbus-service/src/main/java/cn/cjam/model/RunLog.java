@@ -15,6 +15,18 @@ public class RunLog {
     Date ctime;
     Date utime;
 
+    @Override
+    public String toString() {
+        return "RunLog{" +
+                "id=" + id +
+                ", seedId=" + seedId +
+                ", dateOnly=" + dateOnly +
+                ", runInfo='" + runInfo + '\'' +
+                ", state=" + state +
+                ", ctime=" + ctime +
+                ", utime=" + utime +
+                '}';
+    }
 
     public Integer getDateOnly() {
         return dateOnly;

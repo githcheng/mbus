@@ -1,7 +1,10 @@
 package cn.cjam.service;
 
+import cn.cjam.dao.BidDao;
 import cn.cjam.model.RunLog;
 import cn.cjam.model.SeedTemplate;
+import cn.cjam.model.ShowResultTemplate;
+import cn.cjam.util.ParseUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -9,12 +12,12 @@ import com.google.common.collect.Maps;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.downloader.selenium.SeleniumDownloader;
-import us.codecraft.webmagic.pipeline.ConsolePipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 
 import java.util.Iterator;
@@ -27,7 +30,7 @@ public class TaskProcessor implements Callable,PageProcessor {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private Site site = Site.me().setRetryTimes(3).setSleepTime(100);
+    private Site site = Site.me().setRetryTimes(3).setSleepTime(10);
 
     private String startUrl = null;
     private Map<String,String> paramDict = null;
@@ -43,6 +46,9 @@ public class TaskProcessor implements Callable,PageProcessor {
     public TaskProcessor(SeedTemplate seed){
         this.seed = seed;
     }
+
+    @Autowired
+    private BidDao bidDao;
 
     @Override
     public void process(Page page) {
@@ -80,31 +86,6 @@ public class TaskProcessor implements Callable,PageProcessor {
     @Override
     public Site getSite() {
         return site;
-    }
-
-    /**
-     * 入口
-     * @param seed
-     * @return
-     */
-    public JSONArray test(SeedTemplate seed){
-
-        resultArr  = new JSONArray();
-        Integer isBrowse = seed.getIsBrowse();
-        fillParameter(seed);
-        Spider spider = Spider.create(this);
-
-        if(isBrowse == 1 ){
-            String path = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe";
-            SeleniumDownloader seleniumDownloader = new SeleniumDownloader(path);
-            spider.setDownloader(seleniumDownloader);
-            System.out.println("====set==seleniumDownloader");
-        }
-        spider.addUrl(startUrl)
-                .addPipeline(new ConsolePipeline())
-                .run();
-        return resultArr;
-
     }
 
     /**
@@ -152,11 +133,27 @@ public class TaskProcessor implements Callable,PageProcessor {
             spider.setDownloader(seleniumDownloader);
             System.out.println("====set==seleniumDownloader");
         }
-        spider.addUrl(startUrl)
-                .addPipeline(new ConsolePipeline())
-                .run();
+        spider.addUrl(startUrl).run();
 
+        List<ShowResultTemplate> resultList = ParseUtil.parse(resultArr);
+        Iterator<ShowResultTemplate> iterator = resultList.iterator();
+        int failCount = 0;
+        while (iterator.hasNext()){
+            ShowResultTemplate next = iterator.next();
+            next.setType(seed.getType());
+            try {
+                bidDao.insert(next);
+            } catch (Exception e){
+                logger.info("bidDao insert fail:{}",e);
+                failCount++;
+            }
+        }
         RunLog runLog = new RunLog();
+        JSONObject runInfo = new JSONObject();
+        runInfo.put("total", resultList.size());
+        runInfo.put("fail", failCount);
+        runLog.setRunInfo(runInfo.toJSONString());
+        runLog.setSeedId(seed.getId());
         return runLog;
     }
 }

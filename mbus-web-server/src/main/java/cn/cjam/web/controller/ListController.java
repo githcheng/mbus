@@ -2,7 +2,6 @@ package cn.cjam.web.controller;
 
 import cn.cjam.biz.SeedTemplateService;
 import cn.cjam.model.SeedTemplate;
-import cn.cjam.web.api.ProcessorController;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Maps;
 import org.slf4j.Logger;
@@ -14,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;

@@ -1,14 +1,11 @@
 package cn.cjam.web.controller;
 
 import cn.cjam.model.SeedTemplate;
+import cn.cjam.model.ShowResultTemplate;
 import cn.cjam.service.TestMapProcessor;
-import cn.cjam.service.TestProcessor;
-import cn.cjam.web.model.ShowResultTemplate;
+import cn.cjam.util.ParseUtil;
 import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Maps;
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -49,35 +45,10 @@ public class ProcessorTestController {
         SeedTemplate seedTemplate = new SeedTemplate(startUrl, content, isBrowse);
         JSONArray result = processor.test(seedTemplate);
         model.put("id",id);
-        List<ShowResultTemplate> resultTemplates = parse(result);
+        List<ShowResultTemplate> resultTemplates = ParseUtil.parse(result);
         model.put("data",resultTemplates);
         model.put("total",resultTemplates.size());
 
         return new ModelAndView("test_result",model);
     }
-
-
-    public List<ShowResultTemplate> parse(JSONArray result){
-
-        ArrayList<ShowResultTemplate> templates = new ArrayList<ShowResultTemplate>();
-        if (CollectionUtils.isEmpty(result)){
-            return templates;
-        }
-        for (int i=0;i<result.size();i++){
-            JSONObject obj = result.getJSONObject(i);
-            try {
-                ShowResultTemplate element = new ShowResultTemplate();
-                element.title = obj.getJSONObject("all").getString("title");
-                element.contentSize = StringUtils.length(obj.getJSONObject("all").getString("content"));
-                element.url = obj.getJSONObject("request").getString("url");
-                element.statusCode = obj.getJSONObject("request").getJSONObject("extras").getInteger("statusCode");
-                templates.add(element);
-            } catch (Exception e){
-                System.out.println(e);
-            }
-        }
-        return templates;
-    }
-
-
 }
