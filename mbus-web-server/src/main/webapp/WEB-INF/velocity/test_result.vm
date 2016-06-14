@@ -17,6 +17,7 @@
                     <td>
                           ${element.url}
                     </td>
+                    <td> ${element.content} </td>
                 </tr>
             </form>
         #end
