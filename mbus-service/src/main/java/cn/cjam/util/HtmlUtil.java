@@ -137,6 +137,7 @@ public class HtmlUtil {
         input = clearScript(input);
         input = clearNBSP(input);
         input = clearBlank(input);
+        input = clearJs(input);
         return input;
     }
 
