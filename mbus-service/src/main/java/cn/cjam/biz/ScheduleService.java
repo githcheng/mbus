@@ -11,6 +11,7 @@ import cn.cjam.util.TimeUtil;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -120,7 +121,14 @@ public class ScheduleService {
             ShowResultTemplate next = iterator.next();
             next.setType(seed.getType());
 //            next.setPureContent();
-            next.setContent(HtmlUtil.clearField(next.getContent()));
+            String content = HtmlUtil.clearField(next.getContent());
+            content = HtmlUtil.clearScript(content);
+            if (StringUtils.isNotBlank(content)){
+                next.setContent(content.trim());
+            } else {
+                next.setContent("暂无内容");
+            }
+
             try {
                 bidDao.insert(next);
             } catch (Exception e) {

@@ -20,12 +20,6 @@ public class HtmlUtil {
         return Jsoup.clean(html, Whitelist.none());
     }
 
-    public static void main(String[] args){
-        String html = "";
-        String pureText = getPureText(html);
-        System.out.println(pureText);
-    }
-
 
     static String regex = "<\\s*([a-zA-Z-]+).*?>";
     static Pattern compile = Pattern.compile(regex);
@@ -41,5 +35,27 @@ public class HtmlUtil {
             matcher.appendReplacement(stringBuffer,group1);
         }
         return stringBuffer.toString();
+    }
+
+
+    static String scriptRegex = "<\\s*/?[sS]cript\\s*>";
+    static Pattern scriptCompile = Pattern.compile(scriptRegex);
+    public static String clearScript(String input){
+        if (StringUtils.isBlank(input)){
+            return "";
+        }
+        Matcher matcher = scriptCompile.matcher(input);
+        StringBuffer stringBuffer = new StringBuffer();
+        while (matcher.find()){
+            matcher.appendReplacement(stringBuffer,"");
+//            System.out.println(matcher.group());
+        }
+        return stringBuffer.toString();
+    }
+
+    public static void main(String[] args){
+        String input = "<   script></Script   >";
+        String s = clearScript(input);
+        System.out.println("=="+s);
     }
 }
