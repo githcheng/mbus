@@ -14,6 +14,16 @@ public class ShowResultTemplate {
 
     public Integer type;
 
+    public String pureContent;
+
+    public String getPureContent() {
+        return pureContent;
+    }
+
+    public void setPureContent(String pureContent) {
+        this.pureContent = pureContent;
+    }
+
     public Integer getType() {
         return type;
     }

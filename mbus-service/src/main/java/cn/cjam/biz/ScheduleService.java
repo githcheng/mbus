@@ -5,6 +5,7 @@ import cn.cjam.model.RunLog;
 import cn.cjam.model.SeedTemplate;
 import cn.cjam.model.ShowResultTemplate;
 import cn.cjam.service.TaskProcessor;
+import cn.cjam.util.HtmlUtil;
 import cn.cjam.util.ParseUtil;
 import cn.cjam.util.TimeUtil;
 import com.alibaba.fastjson.JSONArray;
@@ -118,6 +119,8 @@ public class ScheduleService {
         while (iterator.hasNext()) {
             ShowResultTemplate next = iterator.next();
             next.setType(seed.getType());
+//            next.setPureContent();
+            next.setContent(HtmlUtil.clearField(next.getContent()));
             try {
                 bidDao.insert(next);
             } catch (Exception e) {
