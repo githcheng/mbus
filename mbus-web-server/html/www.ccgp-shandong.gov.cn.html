@@ -1,0 +1,292 @@
+
+
+
+
+
+
+<script>
+var ids = [['200094743', '1包对应招标文件一册：济宁医学院附属医院第二手术室改造招标文件【定稿】20160615.doc', '/opt/apache-tomcat-6.0.41/webapps/sdgp2014/upload/attach/20160615141151_4813.doc'],['200094744', '1包对应招标文件二册：济宁医学院附属医院第二手术室改造招标文件【定稿】20160615.doc', '/opt/apache-tomcat-6.0.41/webapps/sdgp2014/upload/attach/20160615141206_4813.doc']];
+</script>
+
+<html>
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>中国山东政府采购网</title>
+    <style type="text/css">
+        <!--
+        @import url("css/style.css");
+        body {
+            background-color: #e5e5e5;
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+        -->
+    </style>
+<script>
+function init()
+{
+
+    var str1="";
+    if(ids.length>0){
+        str1 = "附件：<br>";
+    }
+    for (i = 0; i < ids.length; i ++) {
+        if(ids[i][2].indexOf("123.233.119.251")>-1){
+            str1 = str1 + "<a href='"+ids[i][2]+"' target='_blank'>"+ids[i][1]+"</a><br>";
+        }else{
+        	var url = "http://www.ccgp-shandong.gov.cn/";
+            if('370000'=='371300'){
+                url = "http://zfcg.linyi.gov.cn/";
+            }else  if('370000'=='370300'){
+                url = "http://www.zbsczj.gov.cn:81/";
+            }else  if('370000'=='370700'){
+                url = "http://www.ccgp-weifang.gov.cn/";
+            }
+        	var addr = ids[i][2];
+        	addr = addr.substring(addr.indexOf("sdgp2014"));
+        	url+=addr;
+            str1 = str1 + "<a href='"+url+"' target='_blank'>"+ids[i][1]+"</a><br>";
+        }
+    }
+    if(document.getElementById("file_list")!="undefined") {
+        document.getElementById("file_list").innerHTML = str1;
+    }
+    if("旧网站迁移"=="山东普华项目管理有限公司"){
+        document.getElementById("oldcontent").innerHTML = document.getElementById("precontent").innerText;
+    }
+
+
+}
+function addadvice(tar)
+{
+	var winstyle = "channelmode,status=no,toolbar=no,menubar=no,scrollbars=yes,resizable=yes";
+	var name = "";
+	if(tar==1)
+		name="建议录入";
+	else
+		name="询问录入";
+    window.open("../project/addAdvice.jsp?cmd=insert&pid="+"200008964"+"&tartype="+tar+"&type=2", name, winstyle);
+}
+</script>
+</head>
+<body onload="init()">
+
+
+
+
+
+<table width="100%" height="30" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bgcolor="#454545"><table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="Font9Gray">今天是：2016年6月15日 星期三</td>
+          
+        <td align="right" valign="middle"><table border="0" cellspacing="0" cellpadding="0">
+        <table>
+          <tr>
+            <td><input name="textfield" type="text" class="inputGray" /></td>
+            <td><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image1','','/sdgp2014/site/images/header/xxss_btnB.jpg',1)"><img src="/sdgp2014/site/images/header/xxss_btnA.jpg" name="Image1" width="71" height="22" border="0" id="Image1" /></a></td>
+          </tr>
+        </table></td>
+            
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td bgcolor="#0052c7"><table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+		
+        <tr>
+        <td width="130" align="left" valign="top"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="1000" height="140">
+          <param name="movie" value="/sdgp2014/site/images/banner-SD.swf" />
+          <param name="quality" value="high" />
+          <embed src="/sdgp2014/site/images/banner-SD.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="1000" height="140"></embed>
+        </object></td>
+            
+        </tr>
+        
+          <tr>
+            <td align="center" valign="middle" background="/sdgp2014/site/images/header/logo_bk.png"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center" valign="middle" ><a class="ALink" href="/sdgp2014/site/index.jsp" class="dh">首     页</a> |
+                    <a  class="ALink" href="/sdgp2014/site/listall.jsp?colcode=01" class="dh">采购新闻</a> |
+                    <a class="ALink" href="/sdgp2014/site/listall.jsp?colcode=02" class="dh">通知公告</a> |
+                    <a class="ALink" href="/sdgp2014/site/channelall.jsp?colcode=0301" class="dh">采购公告</a> |
+                    
+                    <a class="ALink" href="/sdgp2014/site/channelall.jsp?colcode=0401" class="dh">政策法规</a>  |
+                    
+                    <a class="ALink" href="/sdgp2014/site/channelall.jsp?colcode=2101" class="dh">公示区</a> |
+                    <a class="ALink" href="/sdgp2014/site/listpunishmentall.jsp?colcode=1" class="dh">投诉处理</a> |
+                    <a class="ALink" href="/sdgp2014/site/listall.jsp?colcode=06" class="dh">资料下载</a>
+                    
+                    
+                    
+                </td>
+              </tr>
+            </table></td>
+            </tr>
+        </table></td>
+      </tr>
+
+    </table>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+    <td background="/sdgp2014/site/images/header/top_bk.jpg"><table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><table width="1000" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="20"><img src="/sdgp2014/site/images/header/top_01.jpg" width="20" height="20" /></td>
+            <td background="/sdgp2014/site/images/header/top_02.jpg">&nbsp;</td>
+            <td width="20"><img src="/sdgp2014/site/images/header/top_03.jpg" width="20" height="20" /></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  </table>
+
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+        <td bgcolor="#FFFFFF"><table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td  align="center" valign="top"><img src="images/main/xw_bk_01.jpg" width="20" height="270" /></td>
+                <td align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="1000" valign="top" align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                                    <tr>
+                                        <td align="center" valign="top" bgcolor="#FFFFFF"><table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                    <tr>
+                                                        <td height="42" align="center" valign="middle"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td width="27"><img src="images/erji/left_A_01.jpg" width="27" height="39" /></td>
+                                                                <td align="left"   height="39" valign="middle" background="images/erji/left_A_02.jpg" class="Font16White">您现在的位置：<a class='five' href='channelall.jsp?colcode=0301'>采购公告</a> >> <a class='five' href='listall.jsp?colcode=0301'>省招标公告</a></td>
+                                                                <td width="10"><img src="images/erji/left_A_03.jpg" width="10" height="39" /></td>
+                                                            </tr>
+                                                        </table></td>
+                                                    </tr>
+                                                </table></td>
+                                            </tr>
+                                        </table></td>
+                                    </tr>
+                                </table></td>
+                            </tr>
+                            <tr>
+                                <td background="images/main/table_bk_02.jpg"><img src="images/main/table_bk_02.jpg" width="10" height="10" /></td>
+                            </tr>
+                        </table></td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="15"><img src="images/erji/er_bk_01.jpg" width="15" height="15" /></td>
+                                <td background="images/erji/er_bk_02.jpg"><img src="images/erji/er_bk_02.jpg" width="15" height="15" /></td>
+                                <td width="15"><img src="images/erji/er_bk_03.jpg" width="15" height="15" /></td>
+                            </tr>
+
+                        <tr>
+                                <td background="images/erji/er_bk_04.jpg">&nbsp;</td>
+                                <td bgcolor="#FFFFFF" align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                                    <tr>
+                                        <td align="center"><b class="Font9">
+                                            
+                                        </b></td>
+                                    </tr>
+                                    <tr>
+                                        <td background="images/main/table_bk_04.jpg"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="aa">
+
+                                            
+                                            <tr><td colspan=2 align=center height=30><div align=center>济宁医学院附属医院济宁医学院附属医院第二手术室改造工程公开招标公告</div><br></td></tr><tr><td align='center'>( 招标公告的公告期限为5个工作日 )<br></td></tr><tr><td height=30>一、采购项目名称：济宁医学院附属医院第二手术室改造工程</td></tr><tr><td height=30>二、采购项目编号：PHZB2016-124</td></tr><tr><td><tr><td height=30>三、采购内容及分包情况： <br></td></tr><tr><td height=180 valign=top><table border=1 cellspacing=0 cellpadding=0 width=100% style=border-collapse: collapse bordercolor=#000000><tr><td align=center height=30>包号</td><td align=center>货物名称</td><td align=center>供应商资格要求</td><td align=center>本包预算金额(万元)</td></tr><tr><td align=center height=30>1</td><td align=center>济宁医学院附属医院第二手术室改造工程&nbsp;</td><td align=center>（1）具有独立法人和合法经营资格的投标人，能有效的履行合同，有良好的商业信誉和较强的经营实力；（2）同时具有建筑主管部门颁发的建筑装修装饰工程专业承包（二级及以上资质）、建筑机电安装工程专业承包（二级及以上资质）及建筑智能化工程专业承包（二级及以上资质）；（3）项目经理具有相关专业贰级及以上建造师资格，且在本公司注册，具备有效的安全生产考核合格证书（B证），无在建工程；（4）具有有效的安全生产许可证；（5）未处于被责令停业、投标资格被取消或者财产被接管，冻结和破产状态；（6）没有因骗取中标或者严重违约等问题，被有关部门暂停投标资格并在暂停期内等情形；（7）本项目不接受联合体投标。&nbsp;<td align=center>190.000000&nbsp;</td></tr></table></td></tr><tr><td height=30>四、获取招标文件</td></tr><tr><td height=30>&nbsp;&nbsp;1.时间：2016年6月15日8时30分至2016年6月21日17时0分（北京时间，法定节假日除外）</td></tr><tr><td height=30>&nbsp;&nbsp;2.地点：济南市历下区历山路历山名郡C5座西单元二楼大厅</td></tr><tr><td height=30>&nbsp;&nbsp;3.方式：本项目要求现场报名，报名时请携带营业执照副本、施工资质证书副本、建造师证书、安全生产考核合格证书（B）证、安全生产许可证、法人证或法人授权委托书及本人身份证，以上资料原件（施工资质证书可除外）及加盖公章的复印件一套。</td></tr><tr><td height=30>&nbsp;&nbsp;4.售价：300元</td></tr><tr><td height=30>五、递交投标文件时间及地点</td></tr><tr><td height=30>&nbsp;&nbsp;1.时间：2016年7月8日8时30分至2016年7月8日9时30分（北京时间）</td></tr><tr><td height=30>&nbsp;&nbsp;2.地点：济宁市古槐路57号银座佳悦大酒店四楼会议室</td></tr><tr><td height=30>六、开标时间及地点</td></tr><tr><td height=30>&nbsp;&nbsp;1.时间：2016年7月8日9时30分（北京时间）</td></tr><tr><td height=30>&nbsp;&nbsp;2.地点：济宁市古槐路57号银座佳悦大酒店四楼会议室(山东普华项目管理有限公司济宁评标会议室)</td></tr><tr><td height=30>七、联系方式</td></tr><tr><td height=30>&nbsp;&nbsp;1.采购人：济宁医学院附属医院 </td></tr><tr><td height=30>&nbsp;&nbsp;&nbsp;地址：济宁市任城区古槐路89号(济宁医学院附属医院)</td></tr><tr><td height=30>&nbsp;&nbsp;&nbsp;联系人：赵福荣(济宁医学院附属医院)</td></tr><tr><td height=30>&nbsp;&nbsp;&nbsp;联系方式：0537-2903585(济宁医学院附属医院)</td></tr><tr><td height=30>&nbsp;&nbsp;2.代理机构：山东普华项目管理有限公司</td></tr><tr><td height=30>&nbsp;&nbsp;&nbsp;地址：山东省省（自治区、直辖市）济南市市（州）市中区县（区、市）七里山南三区街道（路、乡、镇）12号楼号（村）2-501</td></tr><tr><td height=30>&nbsp;&nbsp;&nbsp;联系人：王雪洁</td></tr><tr><td height=30>&nbsp;&nbsp;&nbsp;联系方式：0531-55655240</td></tr><tr><td height=15></td></tr><tr><td height=30>&nbsp;&nbsp;&nbsp;供应商请访问中国山东政府采购网(<a href='http://www.ccgp-shandong.gov.cn'>http://www.ccgp-shandong.gov.cn</a>)，在报名截止时间前注册并登陆后进行网上投标报名。未在网上报名或网上报名不成功的，无资格进行投标（或谈判）。</td></tr>
+                                            
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="20"><span id="file_list"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="20" align="right" class="Font9">发布人：山东普华项目管理有限公司</td>
+                                    </tr>
+                                    <tr>
+                                        <td height="20" align="right" class="Font9">发布时间：2016年06月15日 14时33分13秒</td>
+                                    </tr>
+                                    <tr>
+                                        <td background="images/main/table_bk_04.jpg"></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="30"><b class="lg">
+                                            <img border="0" src="images/huan.jpg" width="11" height="11">&nbsp; 相关信息</b>
+                                            
+                                        </td>
+
+
+
+                                    </tr>
+                                    <tr><td><img src='images/arrow4.gif' width='7' height='5'><a href='readneed.jsp?id=4684'>1、济宁医学院附属医院手术室改造需求公开</a></td></tr>
+<tr><td><img src='images/arrow4.gif' width='7' height='5'><a href='read.jsp?id=200166539'>2、济宁医学院附属医院济宁医学院附属医院第二手术室改造工程公开招标公告</a></td></tr>
+<tr><td><img src='images/arrow4.gif' width='7' height='5'><a href='read.jsp?id=200170674'>3、济宁医学院附属医院济宁医学院附属医院第二手术室改造工程废标公告</a></td></tr>
+<tr><td><img src='images/arrow4.gif' width='7' height='5'><a href='read.jsp?id=200170713'>4、济宁医学院附属医院济宁医学院附属医院第二手术室改造工程公开招标公告</a></td></tr>
+
+                              </table></td>
+                                <td background="images/erji/er_bk_05.jpg">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/erji/er_bk_06.jpg" width="15" height="15" /></td>
+                                <td background="images/erji/er_bk_07.jpg"><img src="images/erji/er_bk_07.jpg" width="15" height="15" /></td>
+                                <td><img src="images/erji/er_bk_08.jpg" width="15" height="15" /></td>
+                            </tr>
+                        </table></td>
+                    </tr>
+                </table></td>
+                <td width="20" align="center" valign="top"><img src="images/main/xw_bk_01.jpg" width="20" height="270" /></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="10" bgcolor="#454545"></td>
+  </tr>
+    <tr>
+        <td height="90" align="center" valign="middle" bgcolor="#0052c7">
+                
+            <table>
+                <tr>
+                     
+                    <td align="center"  class="Font12blue"><script type="text/javascript">document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/16/000/0000/60412587/CA160000000604125870005.js' type='text/javascript'%3E%3C/script%3E"));</script></td>
+                    
+                </tr>
+                <tr>
+                    <td align="center"  class="Font12blue" style="padding-top: 20px;">山东省财政厅政府采购监督管理处版权所有 &nbsp;&nbsp;&nbsp;&nbsp;网站来访统计：152253609</td>
+                </tr>
+                <tr>
+                    <td align="center" class="Font12blue" style="padding-bottom: 20px;">建议将显示器设置在1040*768分辨率ie8.0以上浏览&nbsp;鲁ICP备09104516号-2</td>
+                </tr>
+            </table>
+            
+        </td>
+    </tr>
+</table>
+
+</body>
+
+</html>

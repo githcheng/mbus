@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+<script type='text/javascript'>window.BWEUM||(BWEUM={});BWEUM.info = {"stand":true,"agentType":"browser","agent":"bi-collector.oneapm.com/static/js/bw-send-411.4.5.js","beaconUrl":"bi-collector.oneapm.com/beacon","licenseKey":"q3AuR~NaYrABRAyz","applicationID":2272730};</script>
+<script type="text/javascript">
+! function () {
+    window.NREUM || (window.NREUM = {}), window.BWEUM || (window.BWEUM = window.NREUM);
+    var a;
+    window.BWEUM.require = a, window.apmFirstbyte = window.apmUserFirstbyte || (new Date).getTime(), a = function b(c,
+        d, e) {
+        function f(h, i) {
+            if (!d[h]) {
+                if (!c[h]) {
+                    var j = "function" == typeof a && a;
+                    if (!i && j) return j(h, !0);
+                    if (g) return g(h, !0);
+                    var k = new Error("Cannot find module '" + h + "'");
+                    throw k.code = "MODULE_NOT_FOUND", k
+                }
+                var l = d[h] = {
+                    exports: {}
+                };
+                c[h][0].call(l.exports, function (a) {
+                    var b = c[h][1][a];
+                    return f(b ? b : a)
+                }, l, l.exports, b, c, d, e)
+            }
+            return d[h].exports
+        }
+        for (var g = "function" == typeof a && a, h = 0; h < e.length; h++) f(e[h]);
+        return f
+    }({
+        38: [function (a, b) {
+                b.exports = function (a) {
+                    var b = document.createElement("a"),
+                        c = window.location,
+                        d = {};
+                    b.href = a, d.port = b.port;
+                    var e = b.href.split("://");
+                    return !d.port && e[1] && (d.port = e[1].split("/")[0].split(":")[1]), d.port && "0" !== d.port ||
+                        (d.port = "https" === e[0] ? "443" : "80"), d.hostname = b.hostname || c.hostname, d.pathname =
+                        b.pathname, "/" !== d.pathname.charAt(0) && (d.pathname = "/" + d.pathname), d.sameOrigin = !b.hostname ||
+                        b.hostname === document.domain && b.port === c.port && b.protocol === c.protocol, d
+                }
+            }, {}],
+        34: [function (a, b) {
+                function c() {
+                    var a = m.info = window.BWEUM.info;
+                    if (a && a.agent && a.licenseKey && a.applicationID && i && i.body) {
+                        m.proto = "https" === l.split(":")[0] || a.sslForHttp ? "https://" : "http://", g("mark", [
+                                "onload", f()]);
+                        var b = i.createElement("script");
+                        b.src = 0 == a.agent.indexOf("//") ? a.agent : m.proto + a.agent, b.src += "?v=411.4.5 ", i.body
+                            .appendChild(b)
+                    }
+                }
+                function d() {
+                    o || "complete" === i.readyState && e()
+                }
+                function e() {
+                    g("mark", ["domContent", f()])
+                }
+                function f() {
+                    return (new Date).getTime()
+                }
+                var g = a("handle"),
+                    h = window,
+                    i = h.document,
+                    j = "addEventListener",
+                    k = "attachEvent",
+                    l = ("" + location).split("?")[0],
+                    m = b.exports = {
+                        offset: window.apmFirstbyte || f(),
+                        origin: l,
+                        features: {}
+                    };
+                g("mark", ["firstbyte", window.apmFirstbyte || f()]), "complete" === document.readyState ? (e(), c()) :
+                    i[j] ? (i[j]("DOMContentLoaded", e, !1), h[j]("load", c, !1)) : (i[k]("onreadystatechange", d), h[k](
+                    "onload", c));
+                var n = !1,
+                    o = !1;
+                try {
+                    n = null == window.frameElement && document.documentElement
+                } catch (m) {}
+                n && n.doScroll && ! function p() {
+                    if (!o) {
+                        try {
+                            n.doScroll("left")
+                        } catch (a) {
+                            return setTimeout(p, 50)
+                        }
+                        o = !0, e()
+                    }
+                }()
+            }, {
+                handle: 33
+            }],
+        33: [function (a, b) {
+                function c(a, b, c) {
+                    return d.listeners(a).length ? d.emit(a, b, c) : (e[a] || (e[a] = []), void e[a].push(b))
+                }
+                var d = a("ee").create(),
+                    e = {};
+                b.exports = c, c.ee = d, d.q = e
+            }, {
+                ee: 31
+            }],
+        36: [function (a, b) {
+                function c(a, b, c) {
+                    b || (b = 0), "undefined" == typeof c && (c = a ? a.length : 0);
+                    for (var d = -1, e = c - b || 0, f = new Array(0 > e ? 0 : e); ++d < e;) f[d] = a[b + d];
+                    return f
+                }
+                b.exports = c
+            }, {}],
+        31: [function (a, b) {
+                function c(a) {
+                    function b(b, c, g) {
+                        a && a(b, c, g), g || (g = {});
+                        var i = h(b),
+                            j = i.length,
+                            k = {};
+                        try {
+                            k = f(g, e, d)
+                        } catch (l) {}
+                        for (var m = 0; j > m; m++) i[m].apply(k, c);
+                        return k
+                    }
+                    function g(a, b) {
+                        j[a] = h(a).concat(b)
+                    }
+                    function h(a) {
+                        return j[a] || []
+                    }
+                    function i() {
+                        return c(b)
+                    }
+                    var j = {};
+                    return {
+                        on: g,
+                        emit: b,
+                        create: i,
+                        listeners: h,
+                        _events: j
+                    }
+                }
+                function d() {
+                    return {}
+                }
+                var e = "bw@context",
+                    f = a("gos");
+                b.exports = c()
+            }, {
+                gos: 32
+            }],
+        32: [function (a, b) {
+                function c(a, b, c) {
+                    if (d.call(a, b)) return a[b];
+                    var e = c();
+                    if (Object.defineProperty && Object.keys) try {
+                            return Object.defineProperty(a, b, {
+                                value: e,
+                                writable: !0,
+                                enumerable: !1
+                            }), e
+                    } catch (f) {}
+                    try {
+                        a[b] = e
+                    } catch (f) {}
+                    return e
+                }
+                var d = Object.prototype.hasOwnProperty;
+                b.exports = c
+            }, {}]
+    }, {}, []), a = function c(b, d, e) {
+        function f(h, i) {
+            if (!d[h]) {
+                if (!b[h]) {
+                    var j = "function" == typeof a && a;
+                    if (!i && j) return j(h, !0);
+                    if (g) return g(h, !0);
+                    var k = new Error("Cannot find module '" + h + "'");
+                    throw k.code = "MODULE_NOT_FOUND", k
+                }
+                var l = d[h] = {
+                    exports: {}
+                };
+                b[h][0].call(l.exports, function (a) {
+                    var c = b[h][1][a];
+                    return f(c ? c : a)
+                }, l, l.exports, c, b, d, e)
+            }
+            return d[h].exports
+        }
+        for (var g = "function" == typeof a && a, h = 0; h < e.length; h++) f(e[h]);
+        return f
+    }({
+        1: [function (a) {
+                a("loader"), a("errorload"), a("xhrload"), a("perfload")
+            }, {
+                errorload: 5,
+                loader: 34,
+                perfload: 6,
+                xhrload: 7
+            }],
+        7: [function (a) {
+                function b(a) {
+                    if ("string" == typeof a && a.length) return a.length;
+                    if ("object" != typeof a) return void 0;
+                    if ("undefined" != typeof ArrayBuffer && a instanceof ArrayBuffer && a.byteLength) return a.byteLength;
+                    if ("undefined" != typeof Blob && a instanceof Blob && a.size) return a.size;
+                    if ("undefined" != typeof FormData && a instanceof FormData) return void 0;
+                    try {
+                        return JSON.stringify(a).length
+                    } catch (b) {
+                        return void 0
+                    }
+                }
+                function c(a, b) {
+                    return b
+                }
+                function d(a) {
+                    a.send = o.wrapOld(a.send, "send-xhr-", c), a.onreadystatechange = o.wrapOld(a.onreadystatechange,
+                        "iexhr-onreadystatechange-", c), a.onerror = o.wrapOld(a.onerror, "iexhr-onerror-", c)
+                }
+                function e(a) {
+                    var c = this.params,
+                        d = this.metrics;
+                    if (!this.ended) {
+                        if (this.ended = !0, a.removeEventListener) for (var e = 0; m > e; e++) a.removeEventListener(l[
+                                    e], this.listener, !1);
+                        if (!c.aborted) {
+                            if (d.duration = (new Date).getTime() - this.startTime, 4 === a.readyState) {
+                                c.status = a.status;
+                                var f = a.responseType,
+                                    g = "arraybuffer" === f || "blob" === f || "json" === f ? a.response : a.responseText,
+                                    h = b(g);
+                                h && (d.rxSize = h)
+                            } else c.status = 0;
+                            d.cbTime = this.cbTime, c && c.pathname && c.pathname.indexOf("beacon/resources") < 0 && i(
+                                "xhr", [c, d, this.startTime, this.creatType])
+                        }
+                    }
+                }
+                function f(a, b) {
+                    var c = j(b),
+                        d = a.params;
+                    d.host = c.hostname + ":" + c.port, d.pathname = c.pathname, a.sameOrigin = c.sameOrigin
+                }
+                var g = window,
+                    h = (g.performance, window.XMLHttpRequest);
+                if (h && h.prototype && !/CriOS/.test(navigator.userAgent)) {
+                    a("loader").features.xhr = !0;
+                    var i = a("handle"),
+                        j = a("parse-url"),
+                        k = a("ee"),
+                        l = ["load", "error", "abort", "timeout"],
+                        m = l.length,
+                        n = a("loader_id"),
+                        o = a("wrap-function")(k);
+                    a("wrap-events"), a("wrap-xhr"), k.on("new-xhr", function () {
+                        this.totalCbs = 0, this.called = 0, this.cbTime = 0, this.end = e, this.ended = !1, this.xhrGuids = {}
+                    }), k.on("open-xhr-start", function (a) {
+                        this.params = {
+                            method: a[0]
+                        }, f(this, a[1]), this.metrics = {}
+                    }), k.on("open-xhr-end", function (a, b) {
+                        b.__oldie && d(b)
+                    }), k.on("send-xhr-start", function (a, c) {
+                        var d = this.metrics,
+                            e = a[0],
+                            f = this;
+                        if (d && e) {
+                            var g = b(e);
+                            g && (d.txSize = g)
+                        }
+                        if (this.startTime = (new Date).getTime(), this.listener = function (a) {
+                            try {
+                                "abort" === a.type && (f.params.aborted = !0), ("load" !== a.type || f.called === f.totalCbs &&
+                                    (f.onloadCalled || "function" != typeof c.onload)) && f.end && f.end(c)
+                            } catch (b) {
+                                try {
+                                    k.emit("internal-error", [b])
+                                } catch (d) {}
+                            }
+                        }, c.addEventListener) for (var h = 0; m > h; h++) c.addEventListener(l[h], this.listener, !1)
+                    }), k.on("iexhr-onreadystatechange-start", function (a, b) {
+                        if (1 == b.readyState) {
+                            var d = b.onreadystatechange;
+                            setTimeout(function () {
+                                b.onreadystatechange !== d && (b.onreadystatechange = o.wrapOld(b.onreadystatechange,
+                                    "iexhr-onreadystatechange-", c))
+                            }, 0)
+                        }
+                        4 == b.readyState && (this.xhrCbStart = (new Date).getTime())
+                    }), k.on("iexhr-onreadystatechange-end", function (a, b) {
+                        var c = this;
+                        this.xhrCbStart && k.emit("xhr-cb-time", [(new Date).getTime() - this.xhrCbStart, this.onload,
+                                b], b), 4 == b.readyState && c.end(b)
+                    }), k.on("xhr-cb-time", function (a, b, c) {
+                        this.cbTime += a, b ? this.onloadCalled = !0 : this.called += 1, this.called !== this.totalCbs || !
+                            this.onloadCalled && "function" == typeof c.onload || this.end(c)
+                    }), k.on("xhr-load-added", function (a, b) {
+                        var c = "" + n(a) + !! b;
+                        this.xhrGuids && !this.xhrGuids[c] && (this.xhrGuids[c] = !0, this.totalCbs += 1)
+                    }), k.on("xhr-load-removed", function (a, b) {
+                        var c = "" + n(a) + !! b;
+                        this.xhrGuids && this.xhrGuids[c] && (delete this.xhrGuids[c], this.totalCbs -= 1)
+                    }), k.on("addEventListener-end", function (a, b) {
+                        b instanceof XMLHttpRequest && "load" === a[0] && k.emit("xhr-load-added", [a[1], a[2]], b)
+                    }), k.on("removeEventListener-end", function (a, b) {
+                        b instanceof XMLHttpRequest && "load" === a[0] && k.emit("xhr-load-removed", [a[1], a[2]], b)
+                    }), k.on("fn-start", function (a, b, c) {
+                        b instanceof XMLHttpRequest && ("onload" === c && (this.onload = !0), ("load" === (a[0] && a[0]
+                            .type) || this.onload) && (this.xhrCbStart = (new Date).getTime()))
+                    }), k.on("fn-end", function (a, b) {
+                        this.xhrCbStart && k.emit("xhr-cb-time", [(new Date).getTime() - this.xhrCbStart, this.onload,
+                                b], b)
+                    })
+                }
+            }, {
+                ee: 31,
+                handle: 33,
+                loader: 34,
+                loader_id: 35,
+                "parse-url": 38,
+                "wrap-events": 28,
+                "wrap-function": 39,
+                "wrap-xhr": 30
+            }],
+        35: [function (a, b) {
+                function c(a) {
+                    var b = typeof a;
+                    return !a || "object" !== b && "function" !== b ? -1 : a === window ? 0 : f(a, e, function () {
+                        return d++
+                    })
+                }
+                var d = 1,
+                    e = "bw@id",
+                    f = a("gos");
+                b.exports = c
+            }, {
+                gos: 32
+            }],
+        6: [function (a) {
+                var b = window.performance;
+                if (b && b.timing && b.getEntriesByType) {
+                    var c = a("ee"),
+                        d = a("handle"),
+                        e = (a("wrap-timer"), a("loader"));
+                    e.features.stn = !0, c.on("fn-start", function (a) {
+                        var b = a[0];
+                        b instanceof Event && (this.bstStart = Date.now())
+                    }), c.on("fn-end", function (a, b) {
+                        var c = a[0];
+                        c instanceof Event && d("bst", [c, b, this.bstStart, Date.now()])
+                    })
+                }
+            }, {
+                ee: 31,
+                handle: 33,
+                loader: 34,
+                "wrap-timer": 29
+            }],
+        5: [function (a) {
+                function b(a, b, d, g, i) {
+                    try {
+                        j ? j -= 1 : e("err", [i || new c(a, b, d)])
+                    } catch (k) {
+                        try {
+                            e("ierr", [k, (new Date).getTime(), !0])
+                        } catch (l) {}
+                    }
+                    return "function" == typeof h ? h.apply(this, f(arguments)) : !1
+                }
+                function c(a, b, c) {
+                    this.message = a || "Uncaught error with no additional information", this.sourceURL = b, this.line =
+                        c
+                }
+                function d(a) {
+                    e("err", [a, (new Date).getTime()])
+                }
+                var e = a("handle"),
+                    f = a("lodash._slice"),
+                    g = a("ee"),
+                    h = window.onerror,
+                    i = !1,
+                    j = 0;
+                a("loader").features.err = !0, window.onerror = b, window.BWEUM.noticeError = d;
+                var k = window.XMLHttpRequest;
+                try {
+                    throw new Error
+                } catch (l) {
+                    "stack" in l && (a("wrap-timer"), "addEventListener" in window && a("wrap-events"), k && k.prototype &&
+                        k.prototype.addEventListener && a("wrap-xhr"), i = !0)
+                }
+                g.on("fn-start", function () {
+                    i && (j += 1)
+                }), g.on("fn-err", function (a, b, c) {
+                    i && (this.thrown = !0, d(c))
+                }), g.on("fn-end", function () {
+                    i && !this.thrown && j > 0 && (j -= 1)
+                }), g.on("internal-error", function (a) {
+                    e("ierr", [a, (new Date).getTime(), !0])
+                })
+            }, {
+                ee: 31,
+                handle: 33,
+                loader: 34,
+                "lodash._slice": 36,
+                "wrap-events": 28,
+                "wrap-timer": 29,
+                "wrap-xhr": 30
+            }],
+        30: [function (a, b) {
+                function c() {
+                    j.inPlace(this, m, "fn-")
+                }
+                function d(a, b) {
+                    j.inPlace(b, ["onreadystatechange"], "fn-")
+                }
+                function e(a) {
+                    a.open = j.wrapOld(a.open, "open-xhr-", f)
+                }
+                function f(a, b) {
+                    return b
+                }
+                var g = a("ee").create(),
+                    h = a("wrap-events"),
+                    i = a("wrap-function"),
+                    j = i(g),
+                    k = i(h),
+                    l = window.XMLHttpRequest,
+                    m = ["onload", "onerror", "onabort", "onloadstart", "onloadend", "onprogress", "ontimeout"];
+                b.exports = g, window._ApmXMLHttpRequest = window.XMLHttpRequest, window.XMLHttpRequest = function (a) {
+                    var b = new l(a);
+                    try {
+                        g.emit("new-xhr", [], b), l.prototype.addEventListener ? (k.inPlace(b, ["addEventListener",
+                                "removeEventListener"], "-", function (a, b) {
+                            return b
+                        }), b.addEventListener("readystatechange", c, !1)) : (b.__oldie = !0, e(b))
+                    } catch (d) {
+                        try {
+                            g.emit("internal-error", [d])
+                        } catch (f) {}
+                    }
+                    return b
+                }, window.XMLHttpRequest.prototype = l.prototype, j.inPlace(XMLHttpRequest.prototype, ["open", "send"],
+                    "-xhr-", f), g.on("send-xhr-start", d), g.on("open-xhr-start", d)
+            }, {
+                ee: 31,
+                "wrap-events": 28,
+                "wrap-function": 39
+            }],
+        29: [function (a, b) {
+                function c(a, b, c) {
+                    var d = a[0];
+                    "string" == typeof d && (d = new Function(d)), a[0] = e(d, "fn-", null, c)
+                }
+                var d = (a("lodash._slice"), a("ee").create()),
+                    e = a("wrap-function")(d);
+                b.exports = d, e.inPlace(window, ["setTimeout", "setInterval", "setImmediate"], "setTimer-"), d.on(
+                    "setTimer-start", c)
+            }, {
+                ee: 31,
+                "lodash._slice": 36,
+                "wrap-function": 39
+            }],
+        28: [function (a, b) {
+                function c(a) {
+                    f.inPlace(a, ["addEventListener", "removeEventListener"], "-", d)
+                }
+                function d(a) {
+                    return a[1]
+                }
+                var e = (a("lodash._slice"), a("ee").create()),
+                    f = a("wrap-function")(e),
+                    g = a("gos");
+                if (b.exports = e, c(window), "getPrototypeOf" in Object) {
+                    for (var h = document; h && !h.hasOwnProperty("addEventListener");) h = Object.getPrototypeOf(h);
+                    h && c(h);
+                    for (var i = XMLHttpRequest.prototype; i && !i.hasOwnProperty("addEventListener");) i = Object.getPrototypeOf(
+                            i);
+                    i && c(i)
+                } else Object.prototype.hasOwnProperty.call(XMLHttpRequest, "addEventListener") && c(XMLHttpRequest.prototype);
+                e.on("addEventListener-start", function (a) {
+                    if (a[1]) {
+                        var b = a[1];
+                        "function" == typeof b ? this.wrapped = a[1] = g(b, "bw@wrapped", function () {
+                            return f(b, "fn-", null, b.name || "anonymous")
+                        }) : "function" == typeof b.handleEvent && f.inPlace(b, ["handleEvent"], "fn-")
+                    }
+                }), e.on("removeEventListener-start", function (a) {
+                    var b = this.wrapped;
+                    b && (a[1] = b)
+                })
+            }, {
+                ee: 31,
+                gos: 32,
+                "lodash._slice": 36,
+                "wrap-function": 39
+            }],
+        39: [function (a, b) {
+                function c(a) {
+                    return !(a && "function" == typeof a && a.apply && !a[f])
+                }
+                var d = a("ee"),
+                    e = a("lodash._slice"),
+                    f = "bw@wrapper",
+                    g = Object.prototype.hasOwnProperty;
+                b.exports = function (a) {
+                    function b(a, b, d, g, i) {
+                        function j() {
+                            var c = this;
+                            return h(a, b, c, e(arguments), d, g, i)
+                        }
+                        if (c(a)) return a;
+                        b || (b = "");
+                        try {
+                            j[f] = !0
+                        } catch (k) {}
+                        return l(a, j), j
+                    }
+                    function h(a, b, c, d, e, f) {
+                        var d, c, g, h;
+                        try {
+                            g = e && e(d, c) || {}
+                        } catch (i) {
+                            m([i, "", [d, c, f], g])
+                        }
+                        _apmfnName = a.name || "", k(b + "start", [d, c, f, _apmfnName], g);
+                        try {
+                            return h = a.apply(c, d)
+                        } catch (j) {
+                            var l = window.console;
+                            throw void 0 != l && l.error && l.log && void 0 != j.stack && (l.log("OneAPM  catch  error"),
+                                l.error(j.stack)), k(b + "err", [d, c, j], g), j
+                        } finally {
+                            k(b + "end", [d, c, h, _apmfnName], g)
+                        }
+                    }
+                    function i(a, b, c) {
+                        var a = a || function () {}, b = b || "-";
+                        return function () {
+                            var d = this;
+                            return h(a, b, d, e(arguments), c)
+                        }
+                    }
+                    function j(a, d, e, f) {
+                        e || (e = "");
+                        var g, h, i, j = "-" === e.charAt(0);
+                        for (i = 0; i < d.length; i++) h = d[i], g = a[h], c(g) || (a[h] = b(g, j ? h + e : e, f, h, a))
+                    }
+                    function k(b, c, d) {
+                        try {
+                            a.emit(b, c, d)
+                        } catch (e) {
+                            m([e, b, c, d])
+                        }
+                    }
+                    function l(a, b) {
+                        if (Object.defineProperty && Object.keys) try {
+                                var c = Object.keys(a);
+                                return c.forEach(function (c) {
+                                    Object.defineProperty(b, c, {
+                                        get: function () {
+                                            return a[c]
+                                        },
+                                        set: function (b) {
+                                            return a[c] = b, b
+                                        }
+                                    })
+                                }), b
+                        } catch (d) {
+                            m([d])
+                        }
+                        for (var e in a) g.call(a, e) && (b[e] = a[e]);
+                        return b
+                    }
+                    function m(b) {
+                        try {
+                            a.emit("internal-error", b)
+                        } catch (c) {}
+                    }
+                    return a || (a = d), b.inPlace = j, b.flag = f, b.wrapOld = i, b
+                }
+            }, {
+                ee: 31,
+                "lodash._slice": 36
+            }]
+    }, {}, [1]), window.BWEUM.require = a
+}();
+</script>
+
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>出海2年，5亿用户，欧拉网络分发游戏7天攻陷9国！你的轻手游也可以去赚美元 - 初创公司 -  创业邦</title>
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="游戏,欧拉网络,C轮,娱托邦,内容创业,文体消费,电竞/网游,初创公司,出海2年，5亿用户，欧拉网络分发游戏7天攻陷9国！你的轻手游也可以去赚美元" />
+    <meta name="description" content="出海2年，5亿用户，欧拉网络分发游戏7天攻陷9国！你的轻手游也可以去赚美元,6年积累，欧拉网络摸索到移动流量的真玩法" />
+    <meta name="applicable-device" content="pc">
+    <meta name="apple-mobile-web-app-title" content="创业邦">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        <script type="text/javascript" src="http://tpl3.kuailiyu.com/templates/cyzonev3/js/device.js?ver=20160614"></script>
+    <script type="text/javascript">
+    function getCookie(name){
+        var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+
+        if(arr = document.cookie.match(reg)){
+
+            return unescape(arr[2]);
+        }
+        else{
+            return null;
+        }
+    }
+    //检测设备并跳转
+    var domain = 'http://m.cyzone.cn';
+    if(!getCookie('MRGCY_show_pc')){
+      if( device.mobile() || device.ipad() || device.iphone() || device.android() ){
+        window.stop();
+
+        if(window.location.pathname == '/'){
+            if(window.location.hostname == "kuailiyu.cyzone.cn"){
+                window.location.href = domain+'/category/7/';
+            }else{
+                window.location.href = domain;
+            }
+        }else{
+          window.location.href = domain + window.location.pathname;
+        }
+      }
+    }
+    </script>
+    
+    <link href="http://www.cyzone.cn/cyzone.png" sizes="114x114" rel="apple-touch-icon">
+    <meta name="mobile-agent" content="format=html5;url=http://m.cyzone.cn/a/20160615/298388.html">
+    <link type="text/css" href="http://tpl1.kuailiyu.com/templates/cyzonev3/styles/article.css?ver=20160614" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="http://tpl4.kuailiyu.com/templates/cyzonev3/styles/animate.min.css?ver=20160614">
+    <link rel="stylesheet" type="text/css" href="http://tpl3.kuailiyu.com/templates/cyzonev3/styles/auto.css?ver=20160614">
+    <script type="text/javascript" src="http://tpl3.kuailiyu.com/templates/cyzonev3/js/lib/jquery.min.js?ver=20160614"></script>
+    <script type="text/javascript" src="http://tpl1.kuailiyu.com/templates/cyzonev3/js/m.js?ver=20160614"></script>
+    </head>
+<body>
+    
+    <div id="header" class="commen-header header-fixed">
+        <div class="container">
+            
+            <a class="logo" href="http://www.cyzone.cn/"></a>
+            
+            <div class="main-nav pull-left">
+                <ul class="header-menu">
+                    <li>
+                        <a href="http://www.cyzone.cn/category/22/" class="has-url" title="">初创公司</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.cyzone.cn/event/" class="has-child" title="">创投库<i class="point-down"></i></a>
+                        <div class="database-list dropdown-menu pop-left animated hide">
+                            <ul>
+																 <li>
+                                    <a href="http://www.cyzone.cn/event/list-764-0-1/" target="_blank">
+                                      投资事件                                    </a>
+                               
+																	 <li>
+                                    <a href="http://www.cyzone.cn/event/list-761-0-1/" target="_blank">
+                                      公司报道                                    </a>
+                               
+																	 <li>
+                                    <a href="http://www.cyzone.cn/vcompany/list-0-0-1/" target="_blank">
+                                      创业公司                                    </a>
+                               
+																	 <li>
+                                    <a href="http://www.cyzone.cn/company/list-0-1/" target="_blank">
+                                      投资机构                                    </a>
+                               
+															
+							</ul>                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.cyzone.cn/category/765/" class="has-child">创业学院<i class="point-down"></i></a>
+                        <div class="database-list dropdown-menu pop-left animated hide">
+                               							<ul style="height:132px;">
+																 <li>
+                                    <a href="http://www.cyzone.cn/startups/" target="_blank">
+                                      准备创业                                    </a>
+                               
+																	 <li>
+                                    <a href="http://www.cyzone.cn/team/" target="_blank">
+                                      组建团队                                    </a>
+                               
+																	 <li>
+                                    <a href="http://www.cyzone.cn/tech/" target="_blank">
+                                      产品开发                                    </a>
+                               
+																	 <li>
+                                    <a href="http://www.cyzone.cn/promotion/" target="_blank">
+                                      运营推广                                    </a>
+                               
+																	 <li>
+                                    <a href=" http://www.cyzone.cn/capital/" target="_blank">
+                                      融       资                                    </a>
+                               
+																	 <li>
+                                    <a href="http://www.cyzone.cn/management/" target="_blank">
+                                      经营公司                                    </a>
+                               
+															
+							</ul>                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="has-child" title="">孵化服务<i class="point-down"></i></a>
+                        <div class="product-list dropdown-menu pop-left animated hide">
+                            <ul>
+                                								<li class="dropdown-item clearfix">
+                                    <div class="intro">  
+                                        <a  class="product-name" href="http://www.cyzone.cn/tag/DEMO%20SPACE/" target="_blank">DEMO SPACE</a>
+                                        <p class="product-info">创新孵化空间</p>
+                                    </div>
+                                </li>
+                                
+																	<li class="dropdown-item clearfix">
+                                    <div class="intro">  
+                                        <a  class="product-name" href="http://www.cyzone.cn/fuhua/" target="_blank">BANG CAMP</a>
+                                        <p class="product-info">创业邦成长营</p>
+                                    </div>
+                                </li>
+                                
+									                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="has-child" title="">活动<i class="point-down"></i></a>
+                        <div class="conference-list dropdown-menu pop-right animated hide">
+                            <ul>
+                                								<li class="dropdown-item clearfix">
+                                    <div class="intro">  
+                                        <a  class="conference-name" href="http://www.cyzone.cn/features/demochina2016_langfang/" target="_blank">2016创新中国走进廊坊创业大赛</a>
+                                        <p class="clearfix conference-info">
+                                            <span class="time pull-left">2016年5月18日</span>
+                                            <span class="address pull-right">北京</span>
+                                        </p>
+                                    </div>
+                                </li>
+                               
+                               
+																	<li class="dropdown-item clearfix">
+                                    <div class="intro">  
+                                        <a  class="conference-name" href="http://www.cyzone.cn/2016demoCampus/" target="_blank">2016创新中国创业超新星选拔</a>
+                                        <p class="clearfix conference-info">
+                                            <span class="time pull-left">2016年5月-12月</span>
+                                            <span class="address pull-right">全国</span>
+                                        </p>
+                                    </div>
+                                </li>
+                               
+                               
+																	<li class="dropdown-item clearfix">
+                                    <div class="intro">  
+                                        <a  class="conference-name" href="http://www.cyzone.cn/features/2016abroad/" target="_blank">2016创新中国海外行</a>
+                                        <p class="clearfix conference-info">
+                                            <span class="time pull-left">2016年6月19日-25日</span>
+                                            <span class="address pull-right">德国</span>
+                                        </p>
+                                    </div>
+                                </li>
+                               
+                               
+																	<li class="dropdown-item clearfix">
+                                    <div class="intro">  
+                                        <a  class="conference-name" href="http://demochina.cyzone.cn/2016spring/" target="_blank">2016创新中国春季峰会精彩回顾</a>
+                                        <p class="clearfix conference-info">
+                                            <span class="time pull-left">2016年5月10日-12日</span>
+                                            <span class="address pull-right">北京</span>
+                                        </p>
+                                    </div>
+                                </li>
+                               
+                               
+									 
+                            </ul>
+                            <a href="http://conference.cyzone.cn/" class="more-conference">更多活动</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="has-child" title="">旗下产品<i class="point-down"></i></a>
+                        <div class="product-list dropdown-menu pop-right animated hide">
+                            <ul>
+                                								<li class="dropdown-item clearfix">
+                                    <div class="intro">  
+                                        <a  class="product-name" href="http://www.kaidianbang.com/" target="_blank">开店帮</a>
+                                        <p class="product-info">连锁•媒体•金融•服务</p>
+                                    </div>
+                                </li>
+                                
+									                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sub-nav pull-right">
+                                <div class="search-box pull-left">
+                    <form target="_blank" action="http://www.cyzone.cn/index.php" name="search-myform" method="get">
+                        <input type="hidden" name="m" value="search">
+                        <input type="hidden" name="c" value="index">
+                        <input type="hidden" name="a" value="init">
+                        <input type="hidden" name="typeid" value="" id="typeid">
+                        <input type="hidden" name="siteid" value="1" id="siteid">
+                        <input type="text" class="search-t" name="wd" placeholder="搜索">
+                        <input type="button" class="search-btn FontAwesome" value="">
+                    </form>
+                </div>
+    
+                <div class="auth-user-info pull-left">
+                    <ul class="header-menu">
+                        <li class="import">
+                            <a target="_blank" class="tit" href="http://www.cyzone.cn/app/">App下载</a>
+                            <div class="download-list dropdown-menu pop-right animated hide" style="margin-left: -88px">
+                                <img width="133" height="153" src="/templates/cyzonev3/images/download_app@2x.png" alt="">
+                            </div>
+                        </li>
+                        <li style="width:38px;">
+                            <div class="signin hide">
+                                <a class="tit" href="javascript:;">登录</a>
+                            </div>
+                            <div class="login hide">
+                                <a class="tit" href="http://www.cyzone.cn/index.php?m=member&c=index&a=account_manage" title="">
+                                    <span class="auth-photo">
+                                        <img src="/templates/cyzonev2/img/noavatar_big.png" alt="">
+                                    </span>
+                                </a>
+                                <div class="auth-list dropdown-menu pop-right animated hide">
+                                    <div class="dropdown-item clearfix">
+                                        <div class="intro">  
+                                            <a href="http://www.cyzone.cn/index.php?m=member&c=index&a=follow">创投库</a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-item clearfix">
+                                        <div class="intro">  
+                                            <a href="http://www.cyzone.cn/index.php?m=member&c=index&a=favorite">收藏</a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-item clearfix">
+                                        <div class="intro">  
+                                            <a href="http://www.cyzone.cn/index.php?m=member&c=index&a=account_manage">设置</a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-item clearfix">
+                                        <div class="intro">  
+                                            <a href="http://www.cyzone.cn/index.php?m=member&c=index&a=logout">退出</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="block-ad-top com-width">
+           <div class="ad-top com-width">
+<div class="ad-top-895 fl" id="ad-top-895"><script type="text/javascript">$(function(){BAIDU_CLB_fillSlotAsync("1076970", "ad-top-895");});</script></div>
+<div class="ad-top-280 fr" id="ad-top-280"><script type="text/javascript">$(function(){BAIDU_CLB_fillSlotAsync("1076988", "ad-top-280");});</script></div>
+</div>		   <div class="ad-top com-width">
+<div class="ad-top-1200" id="ad-top-1200"><script type="text/javascript">$(function(){BAIDU_CLB_fillSlotAsync("1076972", "ad-top-1200");});</script></div>
+</div>		  <div class="ad-top com-width">
+<div class="ad-top-728" id="ad-top-728"><script type="text/javascript">$(function(){BAIDU_CLB_fillSlotAsync("1076971","ad-top-728");});</script></div>
+</div>        </div>
+        <div class="list-wrap com-width clearfix">
+            <div id="article" class="pull-left">
+                <div class="single-item" data-column="初创公司" data-id="298388" data-title="出海2年，5亿用户，欧拉网络分发游戏7天攻陷9国！你的轻手游也可以去赚美元" data-inputtime="1465978673" data-url="http://www.cyzone.cn/a/20160615/298388.html" data-modelid="1">
+                    <!-- 文章标题/作者/TAGS -->
+                    <div class="article-hd">
+                        <h1 class="article-tit">出海2年，5亿用户，欧拉网络分发游戏7天攻陷9国！你的轻手游也可以去赚美元</h1>
+                        <div class="clearfix">
+                            <div class="author-time pull-left">
+                                    <span class="name">KUMA</span>
+                                <span class="date-time" data-time="1465978673"></span>
+                            </div>
+                            <div class="article-tags pull-right">
+                                                                <span>标签:</span>
+                                <a target="_blank"  class="tag-link" href="http://www.cyzone.cn/tag/%E6%B8%B8%E6%88%8F/" >游戏</a><a target="_blank"  class="tag-link" href="http://www.cyzone.cn/tag/%E6%AC%A7%E6%8B%89%E7%BD%91%E7%BB%9C/" >欧拉网络</a><a target="_blank"  class="tag-link" href="http://www.cyzone.cn/tag/C%E8%BD%AE/" >C轮</a><a target="_blank"  class="tag-link" href="http://www.cyzone.cn/tag/%E5%A8%B1%E6%89%98%E9%82%A6/" >娱托邦</a>                            	                            </div>
+                        </div>
+                    </div>
+                    <!-- 文章主体 -->
+                    <div class="article-content">
+                     <p><img alt="" src="http://img4.kuailiyu.com/uploadfile/2016/0615/20160615042048405.jpg" style="width: 760px; height: 511px;" /></p><p>欧拉网络是一家面向海外的移动应用开发商，坐标上海。2014年Q4转型海外市场后，旗下两款主要产品： Hola桌面(hola launcher)和单手划划(omni swipe)等工具类产品，以及其他移动应用17个月以来总共累计近5亿用户。去年欧拉网络入围了Google应用商店前十开发商榜单，并同时被Google和Facebook以案例的形式收录至其官方网站。</p><p>创始人Brian对创业邦（微信搜索：ichuangyebang）说，欧拉其实是一个积累了6年的老团队。之前一直是默默无闻，但是长时间的技术和经验积累，帮助他们一年多的时间在海外取得了爆发式的用户增长。</p><p>2016年3月，欧拉网络（holaverse）获得了7000万美元的C轮投资，<a href="http://www.cyzone.cn/d/20141215/199.html" target="_blank" class="kylk">毅达资本</a>领投，<a href="http://www.cyzone.cn/d/20150608/506.html" target="_blank" class="kylk">奇虎360</a>和执一资本跟投。基于积累了大量用户，欧拉对于转型进军国际游戏业务市场抱有坚定的信心。依靠自建投资回报测算系统，建立一套完整的出海方案，帮助国内的游戏开发商出海。</p><p><strong>为什么欧拉目前的成绩还不错？</strong></p><p>创业邦（微信搜索：ichuangyebang）认为，欧拉网络在出海之后取得这样的成绩有三个原因：</p><p><span style="color:#FF8C00;"><strong>原因一：团队积累6年，技术成熟</strong></span></p><p>欧拉网络的团队已经磨合了很长时间。在经历了国内工具类产品积累期之后，两年前转型出海产品。依靠之前积累的技术经验做出了靠谱的爆款工具。</p><p><span style="color:#FF8C00;"><strong>原因二：具备时间差和空间差的<a href="http://www.cyzone.cn/tag/%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F/" target="_blank" class="kylk">商业模式</a></strong></span></p><p>不可否认的是，互联网虽然无国界，但是各个地区的发展存在时间差和空间差，如果合理利用好这个&ldquo;不对称&rdquo;，就能产生很好的商业模式。</p><blockquote><p>Brian说，过去几年在中国互联网发生的事情，目前在印度和巴西等地区就有&ldquo;红利&rdquo;，而全球未来几十亿的新增网民很可能都是靠手机触网，前景广阔。</p></blockquote><p>这种利用空间和时间差异，将成熟的商业模式移植到新兴市场的模式，他称之为&ldquo;Copy China To the Globe&rdquo;。商业是追求本质的，只要根据商业逻辑去判断，就可以拥有预见性。</p><p><span style="color:#FF8C00;"><strong>原因三：对于海外产品规律的把控</strong></span></p><blockquote><p>海外的成功产品有自己的成功规律，包括流量选择、地区差异。而移动互联网产品之所以更适合全球化，是因为渠道更加统一了。</p></blockquote><p>下载有苹果的App Store，安卓的Google Play，流量推广则有Goolge和Facebook，全球化的门槛变低。</p><p><strong>流量分发游戏的可行性</strong></p><p>之所以选择游戏作为公司升级的起点，是因为游戏和工具都是基于流量的。</p><blockquote><p>目前国内的流量已经基本被巨头把控，渠道和市面上的手游面临较高的流量费用。在这种情况下，中小型游戏开发商竞争压力增大，反观国际市场仍大有可为，不如转身拥抱海外市场。</p></blockquote><p>可是做海外是要交学费的。包括游戏的特殊性、前期策划、美术风格都需要向海外市场靠拢。如果是非成熟的团队，制作一款足够出海的游戏，起码要用8-12个月的时间。这样在时间上会有滞后性。</p><p>目前，由欧拉网络（Holaverse）代理发行，Tuyoo&amp;BoleGame研发的博彩游戏Kingslots已跻身Google Play排行榜三甲,其中在用户消费能力最强、付费意愿最高排过美国第二。</p><p><img alt="" src="http://img3.kuailiyu.com/uploadfile/2016/0615/20160615042025332.jpg" style="width: 760px; height: 760px;" /></p><blockquote><p>欧拉游戏业务总经理庞磊对创业邦（微信搜索：ichuangyebang）说，欧拉自建的ROI测算系统能根据大数据的采集选定国家，精细化市场投放与流量经营，做到精准定位用户。</p></blockquote><p>这次被选中投放的9个国家，由Tuyoo&amp;BoleGame研发的游戏Kingslots都名列前茅，其中美国、澳大利亚、意大利、西班牙和加拿大冲进了Top New Casino榜单三甲，而新西兰、新加坡和德国跻身前六。</p><p><strong>工具类流量变现的新方向</strong></p><p>Brian说，欧拉网络在今年转型的契机，是基于公司对于互联网流量的思考。当然，并非所有的游戏都适合用工具类流量来变现。</p><p>Brian告诉创业邦（微信搜索：ichuangyebang），欧拉游戏业务今后主要代理的游戏需要具备两种特征：</p><p><span style="color:#FF8C00;"><strong>1、轻度的单机游戏，或者轻中度的网游。</strong></span></p><p>重度网游更适合立体式的多渠道推广。在这方面，国内也有很多深耕多年的出海发行商。</p><p><span style="color:#FF8C00;"><strong>2、全球普适性较高的游戏。</strong></span></p><p>类似跑酷、切水果等游戏能风靡全球，就是因为它们适合所有人群。</p><p>区域文化特征很重的游戏并不能单纯用工具流量来推广。</p><blockquote><p>在后期的游戏选择上，需要更加专注品质的筛选，这样才可以在用户红利变弱（即用户数在平台的增量放缓）时继续发挥流量的作用。</p></blockquote><p>同时，欧拉网络购买流量的方案，以及更精准的投资回报测算也是对今后的流量推广起到关键作用的技术。</p>                    </div>
+                                                                                <div class="article-comName">
+                        <a class="name"  href="http://www.cyzone.cn/r/20160328/20549.html">欧拉网络</a> 已收录在创业邦创投库，您可查看更多   <a class="type" href="http://www.cyzone.cn/event/list-554-3492-1/">工具软件 </a>类的最新创业项目。                     </div> 
+                                        
+                    					                    <!-- 文章底部AD -->
+                    <div class="article-footer-ad">
+                        <p><strong>你努力，但你不在风口上；你聪明，但你不在潮流中！点击后方链接，<a href="http://detail.koudaitong.com/show/goods?alias=3ep7usl5limft&amp;scan=1&amp;activity=none&amp;from=kdt" target="blank">击溃&ldquo;然并卵&rdquo;！</a></strong></p>
+                    </div>
+					                    <!-- 										<div class="article-author clearfix">
+                        <div class="author-photo pull-left">
+                            <a target="_blank"  href="http://www.cyzone.cn/author/491421" ><img class="big-avatar" src="http://www.cyzone.cn/uploadfile/avatar/000/49/14/21_avatar_big.jpg" onerror="this.onerror=null;this.src='http://www.cyzone.cn/statics/images/noavatar_big.gif'" />                            </a>
+                        </div>
+                        <div class="author-info pull-left">
+                            <p><a target="_blank"  href="http://www.cyzone.cn/author/491421"  class="author-name">夏毅鸣</a></p>
+                            <p></p>
+                        </div>
+                    </div>
+					
+					 -->
+                    <!-- share -->
+                    <div class="share-collect clearfix" data-id="298388" data-modelid="1" data-catid="22" data-title="出海2年，5亿用户，欧拉网络分发游戏7天攻陷9国！你的轻手游也可以去赚美元" data-description="6年积累，欧拉网络摸索到移动流量的真玩法" data-url="http://www.cyzone.cn/a/20160615/298388.html">
+
+                        <div class="pull-left">
+                            <span class="collect article-end-collect"><i class="share-collect"></i></span>
+                        </div>
+
+
+                        <div class="end-share pull-right">
+
+                            <span class="share-t">分享到</span>
+                            <span class="article-end-weixin">
+                                <i class="share-weixin"></i>
+                                <div class="share-box hide animated">
+                                    <img class="QrCodeImg" src="http://qr.liantu.com/api.php?text=http://www.cyzone.cn/a/20160615/298388.html" alt="">
+                                </div>
+                            </span>
+                            <span class="article-end-weibo"><i class="share-weibo"></i></span>
+                            <span class="article-end-likedin" ><a target="_blank"   href="http://www.linkedin.com/shareArticle?url=http://www.cyzone.cn/a/20160615/298388.html" title=""><i class="share-likedin"></i></a></span>
+                            <span class="article-end-qzone"><i class="share-qzone"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-r pull-right">
+
+                <div class="pannel-block pannel-ad" id="sidebar-300x250-1">
+                   <script type="text/javascript">$(function(){BAIDU_CLB_fillSlotAsync("2383694", "sidebar-300x250-1");});</script>                </div>
+				
+                <div class="pannel-block pannel-news">
+                    <div class="pannel-title clearfix">
+<div class="pull-left">
+                        <span class="pannel-ico"></span><a target="_blank" href="http://www.cyzone.cn/category/8/" class="pannel-t">快报</a>
+</div>
+<div class="pull-right news-slogan">24小时报不停</div>                    
+</div>
+                    <div class="pannel-body">
+                                            	                                                                        <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">酷派称，被乐视收购为虚假信息，已发律师函并将提起诉讼</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465998047" >21:40</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">针对微博博主“袁炫华”发布的宇龙酷派的相关传言，酷派今日晚间在官方微博回应称，系主观臆造的虚假信息，已向博主发出律师函。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298419.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">雷军撤回YY私有化要约，市场环境欠佳</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465996229" >21:10</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">欢聚时代(Nasdaq:YY)周三宣布，公司董事会下属的特别独立委员会今日接到来自公司董事长雷军和CEO李学凌(以下简称“买家联盟”)的通知函，称买家联盟将撤回2015年7月9日提交的非约束性私有化要约，主要是出于对近期市场条件欠佳的考虑。此次撤销将即刻生效。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298417.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">7名男子身绑580部三星和苹果手机入境被查，案值超130万元</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465996097" >21:08</span>
+                                     <span class="item-time" style="margin-left:10px;">中国新闻网</span>                                </div>
+                                <div class="item-info hide">据该关关员介绍，一名外表看来有50几岁的“大叔”14日从深圳福田口岸旅检入境大厅过关，该旅客身穿宽松的黑色外套，下身穿着一条松松垮垮的牛仔裤，行李简单，只有一个随身挎包。580台手机全绑在数次违规的7名“大叔”“水客”身上。深圳皇岗海关15日透露，该关5分钟内连查7宗旅客绑藏手机入境案，案值超130万元。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298416.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">央行调查统计司司长盛松成：网贷监管将设立“白名单”</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465995463" >20:57</span>
+                                     <span class="item-time" style="margin-left:10px;">第一财经日报</span>                                </div>
+                                <div class="item-info hide">中国人民银行调查统计司司长盛松成表示，央行已经开始着手对网贷行业的资金来源情况进行统计，数据采集和监测的范围将从中国互联网金融协会的部分会员单位开始，然后逐步扩展。资金运用端的统计工作也正在准备和局部开展过程中。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298415.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">开始众筹完成1亿元B轮融资，领跑生活消费领域众筹</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465995156" >20:52</span>
+                                     <span class="item-time" style="margin-left:10px;">创业邦</span>                                </div>
+                                <div class="item-info hide">生活风格型众筹平台“开始众筹”宣布完成由昆仑万维领投的1亿元B轮融资。这是继今年2月份A+轮之后，完成的新一轮融资。开始众筹于2015年4月获得盈动资本等天使投资，11月获得华映资本、引爆点资本等A轮投资，2016年2月完成A+轮融资<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298413.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">苹果加大Apple Watch 2零件采购，每月或出货200万块</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465991610" >19:53</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">来自台湾地区供应链厂商的消息称，苹果公司(以下简称“苹果”)日前加大了对第二代智能手表Apple Watch 2零部件的采购力度。该消息称，苹果对Apple Watch 2芯片和其他零部件的采购力度超出了供应链的预期。根据苹果的订单计算， Apple Watch 2月出货量将达到200万部。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298410.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">快鹿徐琪辞职？100亿未兑付，承诺全成浮云！</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465986130" >18:22</span>
+                                     <span class="item-time" style="margin-left:10px;">创业邦</span>                                </div>
+                                <div class="item-info hide">徐琪疑似决定辞职，具体原因为快鹿集团的内部矛盾，目前并未联系到其本人予以回复，但从其个人朋友圈发布的消息来看，徐琪离职并非空穴来风。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298407.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">消息称滴滴完成45亿美元融资</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465984137" >17:48</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">据《华尔街日报》报道，知情人士称，滴滴出行完成45亿美元融资轮；此轮融资包括苹果公司的投资；料滴滴出行周四公布此轮融资完成的消息；滴滴出行还从招商银行筹得25亿美元债务融资。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298402.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">软银称出售阿里巴巴股票将最多获利24亿美元</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465981195" >16:59</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">日本软银集团今日宣布，出售阿里巴巴股票将使公司在本财年获利2000亿至2500亿日元(折合19亿至24亿美元)。这使得该公司拥有阿里巴巴股权比例从32.2%下降至27%。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298392.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">美丽说蘑菇街淘世界宣布成立美丽联合集团，陈琪出任CEO</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465981058" >16:57</span>
+                                     <span class="item-time" style="margin-left:10px;"> TechWeb</span>                                </div>
+                                <div class="item-info hide">美丽说、蘑菇街、淘世界合并数月后，今日正式宣布新集团为美丽联合集团，陈琪出任新集团CEO。陈琪表示，未来将通过以美丽说、蘑菇街、淘世界三个独立品牌为核心，以社区+内容+电商的模式来服务不同阶段的女性时尚消费需求。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298391.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">阿里成立大文娱工作领导小组，俞永福担任组长</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465980964" >16:56</span>
+                                     <span class="item-time" style="margin-left:10px;">创业邦</span>                                </div>
+                                <div class="item-info hide">阿里巴巴集团CEO张勇宣布正式成立阿里巴巴集团“大文娱工作领导小组”。信中任命俞永福担任阿里巴巴大文娱工作领导小组组长，全面负责阿里巴巴大文娱版块的领导和管理工作，并不再担任阿里妈妈总裁一职。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298390.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">刚获得中东土豪35亿美元投资的优步，要做旅游了</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465978838" >16:20</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">优步宣布推出优步旅行计划（Uber+Travel）App，目前，优步旅行计划首批合作伙伴有海航、百度、去哪儿网、京东、同程旅游、穷游、中国电信、TripAdvisor、Discovery探索极限基地等提供旅游相关服务的品牌。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298389.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">苹果虽然向第三方应用开放了Siri，但是只支持这6类应用</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465978592" >16:16</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">根据苹果发布的编程指南，全新的Siri SDK，也就是SiriKit，最初只能支持6种类型的第三方应用服务，包括音频/视频通话、消息、收付款、搜索图片、开始锻炼和叫车。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298386.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">时尚智能家电“洒哇地咔”拖地机获千万级天使轮投资</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465978451" >16:14</span>
+                                     <span class="item-time" style="margin-left:10px;">创业邦</span>                                </div>
+                                <div class="item-info hide">今天，国内时尚智能家电新秀“洒哇地咔”与“医诺千金” 公益基金联合举办了“为‘爱’我们在一起”的爱心捐赠发布会。智能家电产品“洒哇地咔”获得海泉基金、雅瑞资本千万级人民币天使轮投资。“洒哇地咔”公司董事长俞少蔚先生随后宣布与“医诺千金” 公益基金达成“五年公益捐助计划”：每销售一台“洒哇地咔”品牌智能拖地机，就捐出5元人民币给“医诺千金”公益基金会。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298385.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">快鹿集团董事局主席徐琪或辞职，百亿兑付待考</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465978433" >16:13</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪财经</span>                                </div>
+                                <div class="item-info hide">上周快鹿集团及其旗下平台刚刚宣布开启特殊客户的兑付工作，而今日就传出快鹿集团董事局主席徐琪将辞职对消息。而根据此前披露的消息，快鹿系应兑付的资金总额在100亿元左右，涉及投资者超20万。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298384.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">花椒直播“融”平台战略发布，开启跨界合作</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465973820" >14:57</span>
+                                     <span class="item-time" style="margin-left:10px;">创业邦</span>                                </div>
+                                <div class="item-info hide">花椒直播“融”平台战略发布会在京举行。所谓“融”平台是指花椒直播打破媒体与媒体间的界限，打造一个“融合性”平台，不仅仅局限于个人用户，企业用户同样可以通过直播平台催生出更多优质的内容与营销新玩法。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298378.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">厦门云栖大会召开，阿里云提供三大方案为企业升级IT架构</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465973601" >14:53</span>
+                                     <span class="item-time" style="margin-left:10px;">创业邦</span>                                </div>
+                                <div class="item-info hide">6月15日，阿里云总裁胡晓明在云栖大会·厦门峰会上集中展示了其撬动企业级市场的三大方案：全面的云计算、企业级互联网中间件、大数据平台数加。中石化、华大基因、映客、用友等阿里云的客户分享了石化、基因、直播、企业服务等行业在运用云计算大数据创新的经验。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298381.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">唯品会回应高层震荡：纯属造谣</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465973414" >14:50</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">近日有媒体报道称，唯品会CTO高遵明已经提出离职，同时这也是唯品会近期离职的又一高管，去年至今已有多名高管离职。对此，唯品会方面表示，高遵明先生目前继续任职唯品会CTO，同时“过去3个月接连失去3位高管”的说法不实。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298376.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">小猪短租更名为小猪，推全新slogan“居住自由主义”</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465972902" >14:41</span>
+                                     <span class="item-time" style="margin-left:10px;">创业邦</span>                                </div>
+                                <div class="item-info hide">互联网平台小猪短租宣布更名为小猪，同时，推出了全新的slogan“居住自由主义”。据悉，小猪目前已经连接国内251个城市超8万套优质房源房源和500万活跃用户。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298375.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">iOS 10要求高，40%的iPad将遭淘汰</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465961154" >11:25</span>
+                                     <span class="item-time" style="margin-left:10px;">腾讯科技</span>                                </div>
+                                <div class="item-info hide">由于性能要求高，最新的iOS 10将彻底淘汰一批老旧的iPad产品，iPad 2、iPad 3和第一代iPad mini（用的还是4s的配置）都将永远停留在iOS 9的时代。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298365.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">证监会认定安硕信息涉嫌违规，董事长被罚30万元</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465960372" >11:12</span>
+                                     <span class="item-time" style="margin-left:10px;">TechWeb</span>                                </div>
+                                <div class="item-info hide">A股公司安硕信息收到证监会下发的《行政处罚事先告知书》，关于公司涉嫌误导性陈述一案，已由证监会调查完毕，证监会依法拟对安硕信息作出行政处罚：1、对安硕信息给予警告，并处罚款60万元。2、对高鸣给予警告，并处罚款30万元。3、对曹丰给予警告，并处罚款20万元。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298364.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">罗永浩的情怀不管用了？锤子T2手机全线降价</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465959640" >11:00</span>
+                                     <span class="item-time" style="margin-left:10px;">腾讯科技</span>                                </div>
+                                <div class="item-info hide">手机厂商锤子科技今日宣布，自6 月 18 日起，旗舰手机Smartisan T2 全线降价。16GB Smartisan T2 售价调整为 1799 元，32GB Smartisan T2 售价调整为 1999 元。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298363.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">国产芯片公司慧智微电子完成C轮9200万元投资</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465959050" >10:50</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">慧智微电子Smarter Micro宣布完成C轮9200万元融资，青云资本领投，之前投资方祥峰、金沙江跟投。慧智微电子创立于2012年，是一家实现可重构多频多模射频前端技术并量产的芯片公司，主要供应给智能手机厂商。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298362.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">专利文件显示苹果正在悄悄研发增强现实技术</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465958237" >10:37</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">根据苹果最近获得的专利，未来的iPhone可能会采用透明显示屏，从而利用增强现实技术在现实图像上叠加虚拟信息。苹果周二获得的这项专利名称为透明电子设备“，描述了一种在透明窗户上集成的触控显示屏。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298360.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">分期乐完成D轮系列2.35亿美元融资，华晟资本等领投</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465958165" >10:36</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">6月15日上午消息，分期乐宣布，已完成D轮系列首笔融资2.35亿美元。这笔融资由华晟资本、共建创投(CoBuilder Partners)和一家国内大型保险机构领投，其余投资方及投资金额将会在投资完成后陆续对外公布，华兴资本担任本轮系列融资独家财务顾问。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298359.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">Android之父创立硬件孵化器，他说人工智能和量子计算是未来</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465957972" >10:32</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">有“Android之父”之称的安迪·鲁宾于几年前从谷歌离职，成立了一家资金3亿美元的硬件孵化器Playground。在彭博科技大会上，他展示了两款硬件：用于无人机的信号收发机，以及能提供触感反馈和音乐的背包。这两款硬件都代表了真实世界与互联网和数据互动的新方式，而这也是鲁宾认为技术未来的发展方向。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298358.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">揭秘网贷追债人：手机定位呼死你，还清贷款仍被曝光</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465953293" >09:14</span>
+                                     <span class="item-time" style="margin-left:10px;">南方都市报</span>                                </div>
+                                <div class="item-info hide">揭秘网贷追债人。手段五花八门：发裸照、“呼死你”、入侵通讯录、公开信息……网上催收不成线下就会上门，佣金一般是总债额的三至五成<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298353.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">云HR公司Zenefits危机延续：不到半年又追加裁员9%</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465953214" >09:13</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">美国人力资源软件公司Zenefits周二宣布将再裁员9%，这也是该公司为应对危机采取的最新却重组举措。由于面临监管问题，加之未能达到销售目标，这家曾经广受推崇的公司近期连遭重创。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298352.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">传Uber欲寻求10亿至20亿美元高息贷款</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465953135" >09:12</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">知情人士透露，由于资金需求量巨大，美国专车公司Uber将寻求高息贷款。据称，Uber将通过杠杆贷款方式融资10亿至20亿美元，该公司已经与摩根士丹利和巴克莱就此展开沟通。知情人士表示，谈判仍在进行，因此有可能破裂。巴克莱、摩根士丹利和Uber均拒绝对此置评。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298351.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">传Twitter向网络电台SoundCloud投资7000万美元</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465953053" >09:10</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">消息人士透露，Twitter已经向来自柏林的音乐服务SoundCloud投资7000万美元。Twitter确认了这笔投资，但没有透露其中的财务条款。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298350.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">华为员工家属：华为人收入高，后是全家人的付出</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465951981" >08:53</span>
+                                     <span class="item-time" style="margin-left:10px;">证券时报</span>                                </div>
+                                <div class="item-info hide">华为所谓的高工资里，包含了华为人舍弃了陪伴家人、陪伴孩子成长的时间。因为他们工作的忙碌，家中的另一半，华为家属们，不得不放弃自己原先的工作，回归家庭，照顾子女。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298348.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">做“机”一年多了，周鸿祎说自己憋了很多话想讲</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465950996" >08:36</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">2016年初，360对品牌进行了整合，原奇酷和大神品牌整合为360手机，到现在已经发布了四款360手机产品。周鸿祎说，做“机”的这一年多的时间里，发生了很多不顺利的事情，历经无数困难和挫折。一年前的自己特别喜欢讲段子，甚至被笑称为职业脱口秀演员。反思了一年后，现在想讲讲非常实在的东西。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298344.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">借“网络关键词”诈骗8000余万51人获刑</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465946930" >07:28</span>
+                                     <span class="item-time" style="margin-left:10px;">京华时报</span>                                </div>
+                                <div class="item-info hide">中网互赢公司的62名员工利用网络关键词诈骗259名被害人8400余万元。昨天上午，这起建国后涉案人数最多的合同诈骗案在一中院一审宣判。曾是该公司全国行政总监的石淑荣，因合同诈骗罪被法院判处有期徒刑12年，其他被告人分别获有期徒刑11年到免予刑事处罚不等的刑罚。宣判后，该案第一被告人石淑荣的丈夫表示，对石淑荣的判决太重，将上诉。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298342.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">微软262亿美元收购领英，匿名交易者精准入场或涉内幕交易</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465946706" >07:25</span>
+                                     <span class="item-time" style="margin-left:10px;">每日经济新闻</span>                                </div>
+                                <div class="item-info hide">就在市场纷纷热议谁会成为下一个“领英”时，上周五（6月10日）期权市场围绕领英公司展开的多个交易，因入场时机太过“巧合”，被《财富》（Fortune）等媒体曝出或涉内幕交易，并呼吁美国证交会介入调查。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298341.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">四成苹果iPad将无法运行iOS 10操作系统</div>
+                                <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465946537" >07:22</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">在本次苹果开发者大会（WWDC）以前，公司已经售出的每一台iPad（2010年4月首次上市的iPad 1除外，这种平板电脑在一年后停止生产，期间总共售出了约1500万台）都可运行最新版本的iOS操作系统。但苹果公司现在宣布将不再支持三款老式iPad，分别是iPad 2、iPad 3和第一代iPad mini。<a target="_blank"  href="http://www.cyzone.cn/a/20160615/298340.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                
+                                                                                                                         <div class="item-day">2016/06/14</div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">TCL通讯私有化：2016的目标是实现税后盈利1块钱</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465911027" >21:30</span>
+                                     <span class="item-time" style="margin-left:10px;">一财网</span>                                </div>
+                                <div class="item-info hide">TCL通讯首席运营官兼中国区总裁杨柘在接受包括第一财经记者在内的媒体采访时表示，对于2016的计划，他称内部并没有定下不切实际的目标，唯一的目标就是实现税后盈利1块钱。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298337.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">华为再次加大研发投入，计划提升至总收入的30%</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465910969" >21:29</span>
+                                     <span class="item-time" style="margin-left:10px;">腾讯科技</span>                                </div>
+                                <div class="item-info hide">华为每年在创新研发上的投入非常庞大，是公司总收入的10%至15%，去年华为总投入超过90亿元美元，占比总收入达到15%。徐文伟透露，华为未来仍将继续加大基础研究领域的创新和研发投入，未来比例将提升至20%，甚至达到30%。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298336.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">神州租车1273.8万元回购200万股</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465903261" >19:21</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">神州租车发布公告。据公告披露，神州租车于2016年6月14日以每股7.45-7.53港元的价格，回购股份2,000,000股，占已发行股份的0.083%，共计14,992,400港元(约为1273.8万人民币)。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298333.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">高盛维持百度买入评级，目标价调低至200美元</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465903054" >19:17</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">高盛今日发布投资研究报告，维持百度股票(Nasdaq:BIDU)“买入”评级，将目标股价从220美元调低至200美元。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298332.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">金桥信息披露重组进展，拟收购航美传媒100%股权</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465902800" >19:13</span>
+                                     <span class="item-time" style="margin-left:10px;">中国证券网</span>                                </div>
+                                <div class="item-info hide">因拟筹划重大资产重组停牌的金桥信息公告称，公司于6月14日与文化中心基金、龙德文创基金签署了重组框架协议，拟收购其合计持有的航美传媒75%股权。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298331.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">VIP会员数超2千万，爱奇艺下一步要打儿童牌</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465902554" >19:09</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">爱奇艺表示，截至2016年6月1日，爱奇艺有效VIP会员数突破2000万，相较去年同期增长4倍。此外，值得注意的是，在当天的发布会中，爱奇艺宣布儿童视频服务将成为下一阶段爱奇艺VIP会员内容布局的重点。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298330.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">美拍2周年公布数据：短视频总数5.3亿，直播数952万场</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465902483" >19:08</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">美图公司旗下短视频和直播产品美拍今日举行两周年庆典。在会上，美拍公布了其相关数据：UGC视频总数达5.3亿，日人均观看时长40分钟；2016年1月上线的美拍直播，累计直播数达952万场，累计观众数5.7亿。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298329.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">歌华有线控股股东近两日增持1亿元，完成增持计划</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465902379" >19:06</span>
+                                     <span class="item-time" style="margin-left:10px;">中国证券网</span>                                </div>
+                                <div class="item-info hide">歌华有线发布公告称，公司控股股东投资发展中心于6月13日和6月14日，通过上海证券交易系统以集中竞价交易方式增持公司股份，增持金额累计为10000.11万元，买入公司股票667.75万股，占公司总股本的0.48%，其增持公司股份计划实施完成。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298328.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">聚力传媒发力家庭互联网产业，抢下《魔兽》电影独家互联网版权合作</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465897396" >17:43</span>
+                                     <span class="item-time" style="margin-left:10px;">创业邦</span>                                </div>
+                                <div class="item-info hide">聚力传媒在上海中华艺术宫召开了以“共震”为主题的2016聚力传媒家庭互联网战略发布会，全面发力家庭互联网产业。苏宁文创副总裁、聚力传媒总裁米昕提出，聚力传媒将紧跟政策，以资本的全端布局，PP+N的合作共赢的战略，赢得智能电视大屏市场。据悉，聚力传媒已抢下正在热映的《魔兽》电影独家互联网版权。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298324.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">LINE表情包一年卖2.7亿美元</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465890439" >15:47</span>
+                                     <span class="item-time" style="margin-left:10px;">TechCrunch</span>                                </div>
+                                <div class="item-info hide">社交软件LINE2015年 的表情包收益达到2.7亿美元，相当于每月表情包的收入超过2000万美元，而平均每套12-18个的表情包售价已经达到1-2美元。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298310.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">爱奇艺宣布会员数突破2000万，25-30岁用户占40%</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465890264" >15:44</span>
+                                     <span class="item-time" style="margin-left:10px;">TechWeb</span>                                </div>
+                                <div class="item-info hide">爱奇艺宣布，截至今年6月1日会员数突破2000万，较半年再度增长100%。其中，25岁-30岁的会员占40%，约为800万。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298309.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">新生物技术公司AIS获4800万美元A轮融资</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465890111" >15:41</span>
+                                     <span class="item-time" style="margin-left:10px;">猎云网</span>                                </div>
+                                <div class="item-info hide">位于西雅图的Alpine Immune Sciences于今日宣布，公司已经在A轮融资中获得4800万美元的投资，领投方为OrbiMed Advisors，跟投方有Frazier HealthcarePartners以及Alpine Bioventures。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298308.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">办公室短租服务平台马上办公宣布获得千万元Pre-A轮融资</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465890057" >15:40</span>
+                                     <span class="item-time" style="margin-left:10px;">猎云网</span>                                </div>
+                                <div class="item-info hide">办公室短租服务平台马上办公宣布获得千万元Pre-A轮融资，投资方为接力基金领投，地产商私人投资者跟投。本轮融资的资金主要用作城市拓展和企业服务产品开发。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298307.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">索尼 PlayStation VR 将于 10 月 13 日发售，售价 399 美元</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465889597" >15:33</span>
+                                     <span class="item-time" style="margin-left:10px;">techcrunch</span>                                </div>
+                                <div class="item-info hide">索尼旗下视频游戏子公司 Sony Interactive Entertainment LLC 在洛杉矶 E3 游戏展之前宣布，索尼虚拟现实头盔 PlayStation VR 的上市时间定在 10 月 13 日，售价为 399 美元。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298306.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">微软看中Linkedin社交功能，用其连接微软诸多业务</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465889518" >15:31</span>
+                                     <span class="item-time" style="margin-left:10px;">TechWeb</span>                                </div>
+                                <div class="item-info hide">微软CEO萨提亚·纳德拉(Satya Nadella)表示，Linkedin和微软Office 365以及Dynamics业务拥有很强的协同效应，LinkedIn将成为连接微软诸多业务之间的社交架构。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298305.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">汽车之家宣布媒体业务转型：由垂直媒体转向内容开放平台</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465889321" >15:28</span>
+                                     <span class="item-time" style="margin-left:10px;">TechWeb</span>                                </div>
+                                <div class="item-info hide">汽车之家副总裁韩松今日正式宣布汽车之家媒体业务转型，从原创垂直媒体转向内容开放平台。与此同时，汽车之家还宣布内容平台“优创＋”上线。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298304.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">Uber 在圣保罗推出直升机服务</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465889077" >15:24</span>
+                                     <span class="item-time" style="margin-left:10px;">路透社</span>                                </div>
+                                <div class="item-info hide">在巴西最大城市圣保罗，乘客可通过打车应用 Uber 叫直升机往返于机场、酒店及会议中心之间，避开圣保罗市内严重的交通堵塞，目前促销起步价为约 20 美元。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298303.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">马云：今天假货的质量比真货更好，2020财年实现销售额翻倍</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465888729" >15:18</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">马云称，今天赝品的质量已经超过了某些真品。阿里巴巴预计，今年全球将有4.23亿网购用户，其中大部分通过天猫和淘宝商城进行购物。阿里巴巴的目标是在2020财年实现销售额翻倍至6万亿元，到2036年拥有20亿用户。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298302.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">蚂蚁金服推低碳账单，一年减排二氧化碳57.3万吨</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465888488" >15:14</span>
+                                     <span class="item-time" style="margin-left:10px;">创业邦</span>                                </div>
+                                <div class="item-info hide">蚂蚁金服公布了全民的低碳账单，数据显示， 2015年，用户通过支付宝消灭的纸质单据和完成的各种缴费，相当于一年减少二氧化碳排放量57.3万吨，也相当于多种了573万棵大树。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298299.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">麦子金服联合艾瑞咨询发布消费金融白皮书，预计2019年规模达3.3万亿</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465888150" >15:09</span>
+                                     <span class="item-time" style="margin-left:10px;">创业邦</span>                                </div>
+                                <div class="item-info hide">麦子金服联合艾瑞咨询发布《中国移动互联网消费金融行业研究报告》白皮书，报告指出，预计到2019年，互联网消费金融规模或将达到3.3万亿元。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298298.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">个人数据挖掘应用 ThinkUp 将于 7 月 18 日停止服务</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465887964" >15:06</span>
+                                     <span class="item-time" style="margin-left:10px;">medium</span>                                </div>
+                                <div class="item-info hide">为个人提供数据挖掘服务的开源应用 ThinkUp 宣布，将于 7 月 18 日关闭服务，并对会员费的差额提供退款。ThinkUp 表示，由于Instagram、Twitter 和 Facebook 等平台的重大变化，公司无法维持运行，特别是商业化运作。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298297.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">世界智能手机销售量前12名，中国企业占8个</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465887715" >15:01</span>
+                                     <span class="item-time" style="margin-left:10px;">新浪科技</span>                                </div>
+                                <div class="item-info hide">据韩媒报道，今年第一季度世界智能手机销售排行榜中前12名中有8个是中国企业。销售第4-12名的9个智能手机企业中有7个是中国企业。去年排名第8的OPPO跃居第4，小米和去年一样排名第5。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298295.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">联想ZUK Z2系列开启预约 6.18将全网发售</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465887487" >14:58</span>
+                                     <span class="item-time" style="margin-left:10px;">凤凰科技</span>                                </div>
+                                <div class="item-info hide">6月18日，联想ZUK Z2系列即将开启全网发售，届时，联想ZUK.COM，天猫旗舰店、苏宁易购、苏宁易购天猫旗舰店、分期乐官网平台将同步开放。据悉，ZUK Z2仅售1799元。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298294.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">视频网红孵化公司VS MEDIA获华人文化B轮投资</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465886067" >14:34</span>
+                                     <span class="item-time" style="margin-left:10px;">创业邦</span>                                </div>
+                                <div class="item-info hide">网络视频内容及IP聚合与孵化公司VS MEDIA今日宣布，B轮融资获得由黎瑞刚执掌的华人文化控股集团的战略投资。投资将用于VS MEDIA的未来发展，包括业务开拓、公司运营和市场推广等方面。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298292.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">韩国投资400亿韩元研发无人驾驶技术</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465886011" >14:33</span>
+                                     <span class="item-time" style="margin-left:10px;">中国信息产业网-人民邮电报</span>                                </div>
+                                <div class="item-info hide">未来3年韩国将为该无人驾驶项目投入400亿韩元（约合3392万美元）。韩国未来创造科学部表示，该项目首先将发展对于无人机、无人驾驶汽车和无人驾驶船至关重要的通用技术。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298291.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">海外用车平台惠租车完成 2 亿元人民币 B 轮融资</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465885906" >14:31</span>
+                                     <span class="item-time" style="margin-left:10px;">执惠</span>                                </div>
+                                <div class="item-info hide">海外用车平台惠租车宣布完成 2 亿元人民币 B 轮融资，由汉鼎亚太领投，北极光创投、VentureShares 等跟投。B 轮融资之后，惠租车估值已达数亿美金。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298290.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">小米发布红米3S，迎击魅蓝3S</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465885221" >14:20</span>
+                                     <span class="item-time" style="margin-left:10px;">中关村在线</span>                                </div>
+                                <div class="item-info hide">小米今日正式发布了红米 3S，作为红米 3 的升级版，2GB RAM+16GB ROM 版本售价 699 元，3GB RAM+32GB ROM 售价为 899 元，6 月 16 日在小米官网、小米天猫旗舰店等多个平台同步开售。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298287.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">三星 OLED 屏幕一季度出货 8670 万块，占全球出货量 95%</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465885089" >14:18</span>
+                                     <span class="item-time" style="margin-left:10px;">凤凰科技</span>                                </div>
+                                <div class="item-info hide">韩国市场咨询公司 UBI Research 估计，今年前三个月，三星 OLED 屏幕的出货量达到了 8670 万块。在同一时间段内，全球 OLED 屏幕出货量总计约为 9130 万块，三星占了其中的 95%。今年一季度，全球新增 17 款 OLED 智能手机。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298286.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">乐视网起诉优酷盗播《三枪拍案惊奇》索赔9.5万元</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465876088" >11:48</span>
+                                     <span class="item-time" style="margin-left:10px;">TechWeb</span>                                </div>
+                                <div class="item-info hide">海淀法院官方微博发布消息称，因认为优酷手机端未经允许提供影片《三枪拍案惊奇》的在线播放服务，乐视网信息技术（北京）股份有限公司以侵害信息网络传播权纠纷为由诉至法院，请求判令合一信息技术（北京）有限公司停止侵害、赔偿损失。日前，海淀法院受理了此案。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298279.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                <div class="fast-item">
+                            <div class="item-inner">
+                                <div class="item-title">小米发布智能直流变频落地扇，众筹价 799 元</div>
+                                 <div style="padding-bottom:10px;">
+                                    <span class="item-time" data-stamp="1465875364" >11:36</span>
+                                     <span class="item-time" style="margin-left:10px;">驱动之家</span>                                </div>
+                                <div class="item-info hide">小米刚刚正式发布了生态链新品，隶属于小米智能家庭智米出品，是一款直流变频落地扇，售价799元起，含充电电池。<a target="_blank"  href="http://www.cyzone.cn/a/20160614/298276.html">[详情]</a></div>
+                            </div>
+                        </div>
+                                                
+                                            </div>                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    	
+    <!-- footer end -->
+    <div class="toTop">
+        <a target="_blank" href="/feedback/from/1" class="pos-feedback FontAwesome"><span>意见<br>反馈</span></a>
+        <a href="javascript:;" class="pos-toTop"><span>返回<br>顶部</span></a>
+    </div>
+
+    <script type="text/javascript" src="http://tpl3.kuailiyu.com/templates/cyzonev3/js/sea.js?ver=20160614"></script>
+    <script type="text/javascript" src="http://tpl1.kuailiyu.com/templates/cyzonev3/js/sea_config.js?ver=20160614"></script>
+
+</body>
+</html>
+
+<!--Cached page generated on 2016-06-15 20:23:22-->

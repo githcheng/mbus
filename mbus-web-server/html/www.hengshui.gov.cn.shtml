@@ -1,0 +1,258 @@
+
+
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="http://www.hengshui.gov.cn/image/cms/include/css/cms_main.css" rel="stylesheet" type="text/css">
+<link href="http://www.hengshui.gov.cn/image/cms/website/zhengfu/layout3/css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="http://cms.hengshui.gov.cn/cms/cms/website/zhengfu/2014xin.css" >
+<title>衡水市水务局农村饮水安全水质检测车辆采购项目二次公开招标采购公告</title>
+<style type="text/css">
+.STYLE4 {color: #999999}
+.STYLE7 {font-size: 16px}
+.bai14 {font-family: "宋体"; font-size: 14px; line-height: 24px; font-weight: bold; color: #FFFFFF; text-decoration: none}
+body {
+	background-color: #FFFFFF;
+}
+a:link {
+	text-decoration: none;
+	color: #000000;
+}
+</style>
+</head>
+
+<body>
+<script src=http://wza.hengshui.gov.cn/wza/101/yixuan/yixuan_nav/domready.js?sid=4028></script>
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>头页面</title>
+<link rel="stylesheet" type="text/css" href="http://cms.hengshui.gov.cn/cms/cms/website/zhengfu/2014xin.css" >
+<SCRIPT type=text/javascript src="http://www.hengshui.gov.cn/image/cms/website/zhengfu/2014.js" ></SCRIPT>
+<script src="http://www.hengshui.gov.cn/image/cms/website/zhengfu/Scripts/swfobject_modified.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript" src="http://www.hengshui.gov.cn/image/cms/website/zhengfu/css/calendar.js"></script>
+<script language="javascript" type="text/javascript" src="http://www.hengshui.gov.cn/image/cms/website/zhengfu/weixin.js"></script>
+<style type="text/css">
+a {color: #000000}
+-->
+</style>
+</head>
+
+<body>
+<table width="100%" height="243" border="0" cellpadding="0" cellspacing="0" background="http://cms.hengshui.gov.cn/cms/cms/website/zhengfu/imgxin/body_bg.jpg">
+  <tr> 
+    <td valign="top"> <div align="center"> 
+        <table width="980" height="28" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr> 
+            <td width="326"><div class="topxx"> 
+                <div class="left swlb"> 
+                  <ul>
+                    <li class="rd"><a href="http://www.hsrd.gov.cn/" target="_blank">人大</a></li>
+                    <li class="zx"><a href="http://www.hbhszx.gov.cn/" target="_blank">政协</a></li>
+                  <li style="padding-top:5px;"><a href="http://mail.hengshui.gov.cn" target="_blank"><img src="http://cms.hengshui.gov.cn/cms/cms/website/zhengfu/img/yxrk.gif" width="71" height="14"></a></li>
+                    <div class="clear"></div>
+                  </ul>
+                </div>
+              </div></td>
+            <td width="326"> <!--iframe src="http://m.weather.com.cn/m/pn8/weather.htm?id=101090801T " width="274" height="20" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" allowtransparency="true"></iframe--></td>
+            <td width="326" class="hei"> <div align="right"><a href="http://english.hengshui.gov.cn/" class="hei">English</a>|<A onmouseover=fn_weixin_show(); onmouseout=fn_weixin_hide(); href="http://www.hengshui.gov.cn/">微信关注</A> <SPAN style="POSITION: absolute; DISPLAY: none" id=weixin><IMG alt=衡水政务微信  src="http://cms.hengshui.gov.cn/cms/cms/website/zhengfu/imgxin/weixin.jpg" width=258 height=258> </SPAN>|<a href="#" class="hei">加入收藏</a></div></td>
+          </tr>
+        </table>
+        <table width="980" border="0" align="center" cellpadding="0" cellspacing="0" background="http://cms.hengshui.gov.cn/cms/cms/website/zhengfu/imgxin/ban_bg.jpg">
+          <tr> 
+            <td width="280"><img src="http://cms.hengshui.gov.cn/cms/cms/website/zhengfu/imgxin/logo.jpg" width="280" height="110"></td>
+            <td width="700"><script type=text/javascript>
+			function query()
+{
+	if(document.searchs.keyword.value.length == 0)
+	{
+		alert("关键字不能为空!");
+		return false;
+	}
+	types=document.searchs.type;
+	for(i = 0;i<types.length;i++)
+	{
+		if(types[i].checked == true)
+   		  break;
+	}
+	switch(i)
+	{
+		case 0: //新闻
+		  	document.searchs.target="_self" ;
+			document.searchs.action="http://cms.hengshui.gov.cn/cms/cms/website/zhengfu/search.jsp" ;
+			document.searchs.submit();
+		  break;
+		case 1: //信息公开
+		 	document.searchs.target="_blank" ;
+			document.searchs.action="http://xxgk.hengshui.gov.cn/zfxxgk/zfxxgk/web/branchinfo.jsp?sysid=1&keyword="+encodeURI(encodeURI(document.searchs.keyword.value)) ;
+			document.searchs.submit() ;
+		  break;
+		case 2: //智能办事
+		 	document.searchs.target="_blank" ;
+			document.searchs.action="http://121.17.30.55/apps/zygh/SearchItem.do?searchKey="+encodeURI(encodeURI(document.searchs.keyword.value)) ;
+			document.searchs.submit() ;
+          break; 
+	}
+	
+}
+</script>
+
+<form name="searchs" method="post" >
+			    <table width="350" border="0" align="right" cellpadding="0" cellspacing="0">
+                  <tr> 
+                  <td width="12">&nbsp;</td>
+                  <td width="354">
+				    <input name="type" type="radio" value="news" checked>
+                    新闻 
+                    <input type="radio" name="type" value="xxgk">
+                    信息公开
+		    <input type="radio" name="type" value="bs">
+		    智能办事
+			</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td height="30"><input type="input" name="keyword" value="" class="keyword" size="40"  onkeydown="enterSumbit()" /> 
+                    <input type="button" value="检索" onClick="query()" class="keyword">
+                    &nbsp;&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"></td>
+                </tr>
+              </table>
+			  </form></td>
+          </tr>
+        </table>
+        <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr> 
+            <td><div class="topmenu"> 
+                <ul>
+                  <li class="top1"> <a href="http://www.hengshui.gov.cn/hstz/index.shtml" target="_blank" class="hei">投资衡水</a></li>
+                  <li class="top2"> 
+				   <a href="http://www.hengshui.gov.cn/hstz/qytszy/index.shtml" target="_blank" class="hei">特色资源</a>|
+				   <a href="http://www.hengshui.gov.cn/hstz/tszzcy/index.shtml" target="_blank" class="hei">支柱产业</a><br />
+                   <a href="http://www.hengshui.gov.cn/hstz/tzhj/index.shtml" target="_blank" class="hei">投资环境</a>|
+				   <a href="http://www.hengshui.gov.cn/hstz/pptj/index.shtml" target="_blank" class="hei">品牌推荐</a><br />
+                   <a href="http://www.hengshui.gov.cn/hstz/zdzsxm/index.shtml" target="_blank" class="hei">招商项目</a>|
+				   <a href="http://www.hengshui.gov.cn/hstz/xmjs/index.shtml" target="_blank" class="hei">项目建设</a></li>
+                  <li class="top3"> <a href="http://www.hengshui.gov.cn/HSZW/index.shtml" target="_blank" class="hei">衡水政务</a></li>
+                  <li class="top4"> 
+				   <a href="http://www.hengshui.gov.cn/HSZW/ZWXW/index.shtml" target="_blank" class="hei">政务新闻</a>|
+				   <a href="http://www.hengshui.gov.cn/HSZW/ZFCG/index.shtml" target="_blank" class="hei">政府采购</a><br />
+                   <a href="http://www.hengshui.gov.cn/HSZW/RCZP/index.shtml" target="_blank" class="hei">人才招聘</a>|
+				   <a href="http://www.hengshui.gov.cn/HSZW/GSH/index.shtml" target="_blank" class="hei">中标公示</a><br />
+                   <a href="http://xxgk.hengshui.gov.cn/" target="_blank" class="hei">信息公开</a>|
+				   <a href="http://www.hengshui.gov.cn/HSZW/SZZC/YH/index.shtml" target="_blank" class="hei">市长之窗</a></li>
+                  <li class="top5"><a href="#" target="_blank" class="hei">互动交流</a></li>
+                  <li class="top6">
+				  <a href="http://embed.hengshui.gov.cn/hscj/embed/webhtml/index.jsp?siteId=2&idx=1" target="_blank" class="hei">市长信箱</a>|
+				  <a href="http://www.hengshui.gov.cn/BMTD/index.shtml" target="_blank" class="hei">便民服务</a><br />
+                    <a href="http://embed.hengshui.gov.cn/hscj/embed/webhtml/index.jsp?siteId=2&idx=1#" target="_blank" class="hei">市民之声</a>|
+					<a href="http://embed.hengshui.gov.cn/hscj/embed/webhtml/index.jsp?siteId=2&idx=1#" target="_blank" class="hei">在线访谈</a><br />
+                    <a href="http://embed.hengshui.gov.cn/hscj/embed/webhtml/index.jsp?siteId=2&idx=1#" target="_blank" class="hei">民意征集</a>|
+					<a href="http://embed.hengshui.gov.cn/hscj/embed/webhtml/index.jsp?siteId=2&idx=1#" target="_blank" class="hei">网上调查</a></li>
+                  <li class="top7"><a href="http://wsbs.hengshui.gov.cn/" target="_blank" class="hei">办事服务</a></li>
+                  <li class="top8"> 
+				  <a href="http://121.17.30.55/index.do?templet=flash_grlb&type=1&typeId=P&id=06" target="_blank" class="hei">个人办事</a>|<a href="http://121.17.30.55/index.do?templet=flash_jglb&type=1&typeId=C&id=23" target="_blank" class="hei">机构办事</a><br />
+                  <a href="http://wsbs.hengshui.gov.cn/index.do?templet=kstd&county=1" target="_blank" class="hei">快速通道</a>|<a href="http://121.17.30.55/index.do?templet=ywzx" target="_blank" class="hei">业务咨询</a><br />
+                  <a href="http://wsbs.hengshui.gov.cn/index.do?templet=zncx&county=1" target="_blank" class="hei">智能查询</a>|<a href="http://wsbs.hengshui.gov.cn/index.do?templet=fwdh&county=1" target="_blank" class="hei">服务导航</a></li>
+                  <div class="clear"></div>
+                </ul>
+              </div></td>
+          </tr>
+        </table>
+      </div></td>
+  </tr>
+</table></body>
+</html>
+
+ 
+<div align="center">
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td align="center" valign="top"><table width="800" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td height="20" align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center">
+	<table width="95%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td align="center"><h2>衡水市水务局农村饮水安全水质检测车辆采购项目二次公开招标采购公告</h2></td>
+              </tr>
+              <tr> 
+                <td height="10"></td>
+              </tr>
+              <tr> 
+                <td height="30" align="center" style=";border-bottom: 1px #CCCCCC solid;border-top: 1px #CCCCCC solid;"> 
+                  2016年4月8日 00:00:00&nbsp;&nbsp;&nbsp;来源:<a href="http://www.hengshui.gov.cn/HSZW/ZFCG/index.shtml" 
+                  target="_blank">政府采购</a>&nbsp;&nbsp;&nbsp;<font class="STYLE4"> 
+                  政府采购</font> </td>
+              </tr>
+              <tr> 
+                <td height="10"></td>
+              </tr>
+              <tr> 
+                <td><FONT style="FONT-FAMILY: 宋体; FONT-SIZE: 12pt"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">采购人名称：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px" id=purchasername>市水务局</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">采购人地址 ：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px">衡水市桃城区红旗大街466号</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">采购人联系方式：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px" id=purchasecontact>宋平</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px" id=purchasecontacttel>0318-7105698</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="FONT-FAMILY: 宋体; FONT-SIZE: 12pt" class=Apple-converted-space>&nbsp;</SPAN></SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">采购代理机构地址 ：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px">衡水市人民西路1819号</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">采购代理机构联系方式 ：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px">冯晓东</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px" id=agencycontacttel>0318-2351896</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">采购预算金额：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px">1500000.00</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">采购用途 :<SPAN style="FONT-FAMILY: 宋体; FONT-SIZE: 12pt" class=Apple-converted-space>&nbsp;</SPAN></SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px">本项目采购农村饮水安全水质检测车12台，坚持“实用、耐久、安全、低价”的原则，要求车辆必须是具有GC车辆公告且后备箱为封闭式的工程车。（详见招标文件第三部分）</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">项目实施地点 ：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px">采购人指定地点</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">投标人的资格要求 ：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px" id=supplierqualification>在中华人民共和国境内注册的合法的工商经营单位；符合《政府采购法》第二十二条之规定的条件。具有独立承担民事责任的能力，具有良好的商业信誉和健全的财务会计制度，具有本次招标项目的生产或经营范围，具有履行合同所必需的设备和专业技术能力，有能力提供本次采购货物供货能力。报名时提供： 1、营业执照；2、税务登记证；3、组织机构代码证书；4、所投产品生产厂家针对本项目的授权书和售后服务承诺函；5、法人授权书及法定代表人和委托代理人资格证明文件；6、近3年内，在经营活动中没有违法和不良记录声明函（格式自拟，加盖公章，法人签字）；7、所投车辆必须具有GC车辆公告的工程车，提供证明材料；8、企业简介。（报名时提供以上资质加盖公章的复印件1套，投标时按招标文件要求执行）</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">招标文件发售地点 ：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px">河北省衡水市人民西路1819号----衡水市公共资源交易中心政府采购部（三楼302房间）</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">招标文件发售方式 ：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px" id=getdocpay>其它</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">招标文件售价 ：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px" id=docprice>免费</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">获取文件开始时间：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px">2016-04-08</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">获取文件结束时间：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px">2016-04-14</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">时刻说明：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px">上午8：30-11：50，下午14：00-17：30（节假日除外）</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">投标截止时间：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px">2016年04月28日09时30分</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px" id=time class=txt7>开标时间：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px" id=bidopentime2>2016年04月28日09时30分</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px" id=address class=txt7>开标地点：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px">河北省衡水市公共资源交易中心三楼第一开标室、第二评标室</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"></FONT><FONT style="FONT-FAMILY: 宋体; FONT-SIZE: 12pt"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px" id=dinganncSpan class=txt7>供货时间：<SPAN style="FONT-FAMILY: 宋体; COLOR: rgb(86,86,86); FONT-SIZE: 12pt; FONT-WEIGHT: normal; TEXT-DECORATION: none" id=projectduration>合同签订后45日到货</SPAN><BR style="FONT-FAMILY: ">简要技术要求/采购项目的性质：<SPAN style="FONT-FAMILY: 宋体; COLOR: rgb(86,86,86); FONT-SIZE: 12pt; FONT-WEIGHT: normal; TEXT-DECORATION: none">详见招标文件</SPAN><BR style="FONT-FAMILY: "></SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">传真电话：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px" id=faxphone>0318-2351896</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">受理质疑电话：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px" id=complaintsphone>0318-2351896</SPAN><BR style="LINE-HEIGHT: 30px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; FONT-FAMILY: ; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(74,74,74); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(74,74,74); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">备注：</SPAN><SPAN style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; FONT: 12pt/30px 宋体; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(86,86,86); WORD-SPACING: 0px; TEXT-DECORATION: none; -webkit-text-stroke-width: 0px">政府采购项目名称：衡水市水务局农村饮水安全水质检测车辆采购项目 采购项目文件编号：HSZFCG2016G10601</SPAN></FONT> </td>
+              </tr>
+              <tr> 
+                <td height="10"></td>
+              </tr>
+              
+              <tr> 
+                <td height="20">&nbsp;</td>
+              </tr>
+            </table>
+	</td>
+  </tr>
+  
+  
+  
+</table></td>
+    <td valign="top" bgcolor="#FDF4CA"><iframe src="http://www.hengshui.gov.cn/rightPage.shtml" scrolling="no" width="200" height="290"></iframe></td>
+  </tr>
+</table>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.hsbottom {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+-->
+</style>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+	<tr>
+		<td width="1000" height="17" background="http://www.hengshui.gov.cn/image/cms/website/zhengfu/images/index_324.gif">&nbsp;</td>
+	</tr>
+	<tr>
+	<td height="121" align="center"><table width="700" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+		  <td height="20" align="center" class="hsbottom"><a href="http://cms.hengshui.gov.cn/cms/cms/website/zhengfu/advice.htm" target="_blank">联系我们</a></td>
+	  </tr>
+	  <tr>
+		  <td height="20" align="center" class="hsbottom">主办：衡水市人民政府 承办：衡水市人民政府办公室</td>
+	  </tr>
+	  <tr>
+		  <td height="20" align="center" class="hsbottom">冀ICP备05018304号-1<img src="http://www.hengshui.gov.cn/image/cms/website/zhengfu/images/gt666.gif" width="38" height="37" border="0" usemap="#Map" /></td>
+	  </tr>
+	   <tr>
+		  <td height="20" align="center" class="hsbottom"><script type="text/javascript">document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/05/104/0000/30318001/CA051040000303180010001.js' type='text/javascript'%3E%3C/script%3E"));</script></td>
+	  </tr>
+	</table></td>
+  </tr>
+	<tr>
+		<td height="4" background="http://www.hengshui.gov.cn/image/cms/website/zhengfu/images/index_326.gif"></td>
+	</tr>
+</table>
+
+</div>
+</body>
+
+</html>
