@@ -21,7 +21,7 @@ public class HtmlUtil {
     }
 
 
-    static String regex = "<\\s*([a-zA-Z-]+).*?>";
+    static String regex = "<\\s*([a-zA-Z0-9-]+).*?>";
     static String scriptRegex = "<\\s*/?[sS]cript\\s*>";
     static String nbspRegex = "(\\s*&nbsp;\\s*)+\\s*";
     static String blankRegex = "\\s+";
