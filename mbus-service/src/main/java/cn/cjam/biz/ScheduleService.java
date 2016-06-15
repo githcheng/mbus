@@ -120,13 +120,11 @@ public class ScheduleService {
         while (iterator.hasNext()) {
             ShowResultTemplate next = iterator.next();
             next.setType(seed.getType());
-//            next.setPureContent();
-            String content = HtmlUtil.clearField(next.getContent());
-            content = HtmlUtil.clearScript(content);
+            String content = HtmlUtil.clear(next.getContent());
             if (StringUtils.isNotBlank(content)){
                 next.setContent(content.trim());
             } else {
-                next.setContent("暂无内容");
+                next.setContent("暂无内容...");
             }
 
             try {
