@@ -17,10 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.*;
 
 /**
@@ -76,13 +73,24 @@ public class ScheduleService {
             logger.info("insertList exception",e);
         }
         ArrayList<Integer> states = new ArrayList<Integer>();
-        states.add(0);
-
+        states.add(RunLog.state_default);
+        states.add(RunLog.state_ok);
 
         List<RunLog> runLogs = runLogService.getRunLogListByTime(states, beginDate, endDate);
 
         if (CollectionUtils.isEmpty(runLogs)){
             return;
+        }
+        Iterator<RunLog> runLogIterator = runLogs.iterator();
+        while (runLogIterator.hasNext()){
+            RunLog next = runLogIterator.next();
+            if (next.getState() == RunLog.state_ok){
+                Date utime = next.getUtime();
+                long timeBefore4 =utime.getTime() + 3600 * 4;
+                if (System.currentTimeMillis() < timeBefore4){
+                    runLogIterator.remove();
+                }
+            }
         }
 
         CompletionService<RunLog> execcomp = new ExecutorCompletionService<RunLog>(executorService);
