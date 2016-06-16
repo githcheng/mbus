@@ -124,7 +124,7 @@ public class ScheduleService {
         JSONArray resultArr = runLog.getResult();
         List<ShowResultTemplate> resultList = ParseUtil.parse(resultArr);
         Iterator<ShowResultTemplate> iterator = resultList.iterator();
-        int failCount = 0;
+        int sucessCount = 0;
         while (iterator.hasNext()) {
             ShowResultTemplate next = iterator.next();
             next.setType(seed.getType());
@@ -138,13 +138,14 @@ public class ScheduleService {
 
             try {
                 bidDao.insert(next);
+                sucessCount++;
             } catch (Exception e) {
                 logger.info("bidDao insert fail:{}", e);
             }
         }
         JSONObject runInfo = new JSONObject();
         runInfo.put("total", resultList.size());
-        runInfo.put("fail", failCount);
+        runInfo.put("success", sucessCount);
         if (resultList.size() == 0){
             // 以失败结束
             runLog.setState(RunLog.state_fail);
