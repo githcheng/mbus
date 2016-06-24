@@ -35,10 +35,10 @@ public class HandleHtml {
             String encoding = get_charset(fileItem);
             String doc = readFileByLines(absolutePath, encoding);
 
-            String clearDoc = HtmlUtil.clear(doc);
+//            String clearDoc = HtmlUtil.clear(doc);
 //            System.out.println(clearDoc);
 
-            Document html = Jsoup.parse(clearDoc);
+            Document html = Jsoup.parse(doc);
             String title = html.title();
             System.out.println(title);
             if (!StringUtils.isEmpty(title)){
@@ -79,8 +79,20 @@ public class HandleHtml {
 
             Element eBody = html.body();
             JSONObject object = new JSONObject();
-            JSONObject deep = deep(eBody, object);
-            System.out.println(deep.toJSONString());
+            JSONObject deep = deep(eBody, object,0);
+//            System.out.println(deep.toJSONString());
+
+            System.out.println(total+","+maxHeight+","+max);
+
+            printPoint = max;
+            max = 0;
+            total = 0;
+            maxHeight = 0;
+            deep(eBody, object,0);
+            printPoint = -1;
+
+            // TODO
+//            break;
 
         }
         String format = String.format("title:%s/10, h1:%d/10, exist:%d/10,fieldTitleCount:%d/10",
@@ -94,31 +106,54 @@ public class HandleHtml {
 
 
     }
+    static int printPoint = -1;
+    public static int total = 0;
+    public static int maxHeight = 0;
+    public static int max = 0;
 
 
-    public static JSONObject deep(Element root, JSONObject object){
+    public static JSONObject deep(Element root, JSONObject object,int height){
         if (root == null){
             return null;
         }
+        total++;
+        height++;
+
+        if (height > maxHeight){
+            maxHeight = height;
+        }
         Elements childrens = root.children();
         if (childrens.size() <= 0){
+
             String rootName = root.tagName();
             object.put("name",rootName);
-            return object;
-        }
+        } else {
+            Iterator<Element> iterator = childrens.iterator();
+            String rootName = root.tagName();
+            int size = childrens.size();
 
-        Iterator<Element> iterator = childrens.iterator();
-        String rootName = root.tagName();
-        int size = childrens.size();
-        JSONArray arr = new JSONArray();
-        while (iterator.hasNext()){
-            JSONObject item = new JSONObject();
-            Element next = iterator.next();
-            deep(next,item);
-            arr.add(item);
+            if (size > max){
+                max = size;
+            }
+
+            if (max == printPoint){
+                System.out.println("============start===============");
+                System.out.println(root);
+                System.out.println("============end===============");
+                printPoint = -1;
+            }
+
+            JSONArray arr = new JSONArray();
+            while (iterator.hasNext()){
+                JSONObject item = new JSONObject();
+                Element next = iterator.next();
+                deep(next,item,height);
+                arr.add(item);
+            }
+            object.put("name", rootName+":"+size);
+            object.put("children",arr);
         }
-        object.put("name", rootName+":"+size);
-        object.put("children",arr);
+        height--;
         return object;
     }
 

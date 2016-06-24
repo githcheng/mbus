@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by cheng on 2015/11/1.
@@ -44,7 +45,16 @@ public class TestController {
                      HttpServletResponse response ){
 
         List<TestUser> users = service.getList(10);
+        long timeMillis = System.currentTimeMillis();
+
         Object o = JSON.toJSON(users);
         return new JsonResult().success().withData(o);
+    }
+
+    public static void main(String[] args){
+        Thread thread = Thread.currentThread();
+        long threadId = thread.getId();
+        ThreadLocal<Integer> threadLocal = new ThreadLocal<Integer>();
+
     }
 }
